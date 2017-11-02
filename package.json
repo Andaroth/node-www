@@ -1,0 +1,16 @@
+{
+  "name": "monserveur",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Erreur : aucun test de précisé\" && exit 1"
+  },
+  "author": "Axel Andaroth",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {},
+  "description": ""
+}
