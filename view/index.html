@@ -10,7 +10,7 @@
   <h1><a id="toplink" href="#home"><span class="nomobile">Apprendre </span>NodeJS<span class="nomobile"> avec Lovelace</span></a></h1> 
   <ul class="menu nomobile">
     <li><a class="chaplink" href="#installer">Installer <span class="hidden">NodeJS</span></a></li>
-    <li><a class="chaplink" href="#npm"><span class="hidden">Utiliser </span>NPM</a></li>
+    <li><a class="chaplink" href="#npm"><span class="hidden">Utiliser </span><b>NPM</b></a></li>
     <li><a class="chaplink" href="#express"><span class="hidden">Faire un serveur en </span>express</a></li>
     <li><a class="chaplink" href="#socketio"><span class="hidden">Faire un chat avec </span>socket.io</a></li>
     <li><a class="chaplink" href="#evenements"><span class="hidden">Que sont les </span>Événements</a></li>
@@ -28,20 +28,20 @@
   <section id="installer" class="box hidden">
     <h2>Installer la dernière version de Node.JS</h2>
     <p>Bienvenue dans le premier chapitre de Node.</p>
-    <p>Nous allons voir comment installer NodeJS et le mettre à jour à sa dernière version. Cela vous permettra d'utiliser le gestionnaire de package NPM pour installer des modules indispensables tels que express ou socket.io !</p>
-    <p>Au cours de ce chapitre, nous allons également installer NVM, qui vous permettra de changer à volonté de version de NodeJS.</p>
+    <p>Nous allons voir comment installer NodeJS et le mettre à jour à sa dernière version. Cela vous permettra d'utiliser le gestionnaire de package <b>NPM</b> pour installer des modules indispensables tels que <i>express</i> ou <i>socket.io</i> !</p>
+    <p>Au cours de ce chapitre, nous allons également installer <b>NVM</b>, qui vous permettra de changer à volonté de version de NodeJS.</p>
     <p>Voici les étapes que nous allons devoir réaliser pour arriver à la fin de ce chapitre :</p>
     <ol>
       <li><a href="#chap1p1">Télécharger NodeJS</a></li>
       <li><a href="#chap1p1a">Installation en ligne de commandes</a></li>
-      <li><a href="#chap1p2">Télécharger NVM</a></li>
+      <li><a href="#chap1p2">Télécharger <b>NVM</b></a></li>
       <li><a href="#chap1p3">Mettre à jour</a></li>
     </ol>
     <h3 id="chap1p1">Télécharger NodeJS</h3>
     <p>
       Pour commencer, pas de surprise: vous devez installer NodeJS sur votre machine, et donc le télécharger. </p>
     <p>
-      La méthode simple, rendez-vous <a href="https://nodejs.org/en/download/">sur le site officiel de Node</a>. <br>Sur cette page, vous avez une liste quasi-exhaustive de la plupart des systèmes d'exploitation. Choisissez le vôtre (moi c'est Windows 10 64bits) et lancez l'éxécutable, installez et bim. Vous aurez la toute dernière version de NodeJS ainsi que NPM. </p>
+      La méthode simple, rendez-vous <a href="https://nodejs.org/en/download/">sur le site officiel de Node</a>. <br>Sur cette page, vous avez une liste quasi-exhaustive de la plupart des systèmes d'exploitation. Choisissez le vôtre (moi c'est Windows 10 64bits) et lancez l'éxécutable, installez et bim. Vous aurez la toute dernière version de NodeJS ainsi que <b>NPM</b>. </p>
     <p>
       L'installation directe par l'exécutable, le deb, etc... peut parfois poser problème. <br>Je pense particulièrement aux utilisateurs de distributions Linux comme Debian, RHEL, etc... ou même aux utilisateurs qui préfèrent tout installer en lignes de commandes dans un terminal. </p>
     <h3 id="chap1p1a">Installation en lignes de commandes (Linux)</h3>
@@ -51,43 +51,43 @@
       <code>sudo apt-get install -y nodejs</code>
       <code>node -v</code>
     </div>
-    <p>Vous avez donc maintenant NodeJS. <br>Si je ne m'abuse, le terminal devrait vous dire que vous vous trouvez en version 4 ou quelque-chose en dessous de 6, ce qui nous embête pas mal car elle ne comprend ni gestionnaire de paquets, ni gestionnaire de version. <br>C'est pourquoi nous allons devoir installer NVM tout de suite !</p>
-    <h3 id="chap1p2">Télécharger NVM</h3>
-    <p>Comme vous l'aurez sans doute compris, NVM va vous permettre de gérer votre version de NodeJS. Seulement, le problème est qu'il n'est pas présent de base avec Node, nous allons donc l'installer !</p>
+    <p>Vous avez donc maintenant NodeJS. <br>Si je ne m'abuse, le terminal devrait vous dire que vous vous trouvez en version 4 ou quelque-chose en dessous de 6, ce qui nous embête pas mal car elle ne comprend ni gestionnaire de paquets, ni gestionnaire de version. <br>C'est pourquoi nous allons devoir installer <b>NVM</b> tout de suite !</p>
+    <h3 id="chap1p2">Télécharger <b>NVM</b></h3>
+    <p>Comme vous l'aurez sans doute compris, <b>NVM</b> va vous permettre de gérer votre version de NodeJS. Seulement, le problème est qu'il n'est pas présent de base avec Node, nous allons donc l'installer !</p>
     <p>Une fois de plus, nous allons devoir taper une commande sur notre terminal :</p>
     <div class="code">
       <code>curl https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash</code>
     </div>
-    <h3 id="chap1p3">Mettre à jour NodeJS avec NVM</h3>
-    <p>Vous pouvez désormais installer la version actuelle de NodeJS à l'aide de NVM avec la petite ligne de terminal suivante:</p>
+    <h3 id="chap1p3">Mettre à jour NodeJS avec <b>NVM</b></h3>
+    <p>Vous pouvez désormais installer la version actuelle de NodeJS à l'aide de <b>NVM</b> avec la petite ligne de terminal suivante:</p>
     <div class="code">
       <code>sudo nvm install current</code>
     </div>
     <p>Quand c'est fait, le terminal devrait vous indiquer un message comme <br><cite>Now using node v9.2.0 (npm v5.5.1)</cite>.<br> Si c'est en effet le cas, félicitations, vous venez de finir ce chapitre avec succès !</p>
     <h3>Ensuite</h3>
     <p>Bon bon bon ! </p>
-    <p>Vous disposez maintenant de NodeJS sur votre machine. Vous avez NVM pour gérer sa version et vous pouvez désormais utiliser <strong>NPM</strong>, qui est totalement indispensable si vous désirez développer vos propres applications en Node.</p>
-    <p>Ne perdons donc pas une seconde et rendons-nous bien vite au <a href="#npm" class="btn chaplink">chapitre sur NPM</a></p>
+    <p>Vous disposez maintenant de NodeJS sur votre machine. Vous avez <b>NVM</b> pour gérer sa version et vous pouvez désormais utiliser <strong><b>NPM</b></strong>, qui est totalement indispensable si vous désirez développer vos propres applications en Node.</p>
+    <p>Ne perdons donc pas une seconde et rendons-nous bien vite au <a href="#npm" class="btn chaplink">chapitre sur <b>NPM</b></a></p>
   </section>
   <section id="npm" class="box hidden">
-    <h2>Utiliser NPM</h2>
-    <p>Ce chapitre va vous expliquer brièvement à quoi sert NPM et ce que sont les modules/packages que l'on peut installer dans un projet à l'aide de cet outil. </p>
+    <h2>Utiliser <b>NPM</b></h2>
+    <p>Ce chapitre va vous expliquer brièvement à quoi sert <b>NPM</b> et ce que sont les modules/packages que l'on peut installer dans un projet à l'aide de cet outil. </p>
     <p>Le chapitre se découpe en ces quelques parties :</p>
     <ol>
-      <li><a href="#chap2p1">Qu'est-ce que NPM</a></li>
+      <li><a href="#chap2p1">Qu'est-ce que <b>NPM</b></a></li>
       <li><a href="#chap2p2">Pourquoi s'en servir</a></li>
       <li><a href="#chap2p3">Comment s'en servir</a></li>
       <li><a href="#chap2p4">Quels modules utiliser</a></li>
     </ol>
-    <h3 id="chap2p1">Qu'est-ce que NPM</h3>
-    <p>NPM (on l'a beaucoup lu en à peine 15 secondes, c'est chaud) signifie <strong>Node Package Manager</strong>. <br>Ce petit outil, néanmoins très complet, va nous permettre d'installer des packages ou des modules dans NodeJS ou plus spécifiquement dans nos projets.</p>
+    <h3 id="chap2p1">Qu'est-ce que <b>NPM</b></h3>
+    <p><b>NPM</b> (on l'a beaucoup lu en à peine 15 secondes, c'est chaud) signifie <strong>Node Package Manager</strong>. <br>Ce petit outil, néanmoins très complet, va nous permettre d'installer des packages ou des modules dans NodeJS ou plus spécifiquement dans nos projets.</p>
     <h3 id="chap2p2">Pourquoi s'en servir</h3>
     <p>Les modules vont vous permettre de créer des applications rapidement, sans devoir réinventer systématiquement la roue. Ils sont incontournables dans 99,99% des projets en NodeJS de nos jours. </p>
     <p>Même le serveur HTTP de ce site est fait en node et utilise plusieurs modules tels que <i>express</i> ou <i>ejs</i>. </p>
     <h3 id="chap2p3">Comment s'en servir</h3>
-    <p>NPM s'utilise de deux manières. Vous pouvez soit installer un module globalement dans NodeJS, ce qui vous permettra de l'utiliser dans tous vos projets, soit installer un module uniquement dans un projet en particulier, si jamais vous n'en avez pas besoin ailleurs. </p>
+    <p><b>NPM</b> s'utilise de deux manières. Vous pouvez soit installer un module globalement dans NodeJS, ce qui vous permettra de l'utiliser dans tous vos projets, soit installer un module uniquement dans un projet en particulier, si jamais vous n'en avez pas besoin ailleurs. </p>
     <p>Nous allons passer les deux méthodes en revue, vite fait, pour que vous compreniez un peu mieux de quoi il s'agit. </p>
-    <p>Comme pour NVM, NPM s'utilise en lignes de commandes via le terminal.</p>
+    <p>Comme pour <b>NVM</b>, <b>NPM</b> s'utilise en lignes de commandes via le terminal.</p>
     <div class="code">
       <code>sudo npm install <b>-g</b> <i>create-react-app</i></code>
     </div>
@@ -99,7 +99,7 @@
     </div>
     <p>Cette commande plus courte permet d'installer, en l'occurence, <cite>express</cite> <strong>dans un projet existant</strong>.</p>
     <p>Notez que cette méthode installera le module uniquement dans le projet de votre choix. <i>Il convient bien entendu que votre terminal soit dans le bon répertoire sinon ça ne sert à rien.</i> </p>
-    <p>Dans tous les cas, NPM va trouver en ligne, dans une vaste base de donnée regroupant tous les modules déjà créés auparavant par la communauté de NodeJS. Notez donc que sans connexion à Internet, vous ne pourrez pas faire fonctionner NPM correctement. </p>
+    <p>Dans tous les cas, <b>NPM</b> va trouver en ligne, dans une vaste base de donnée regroupant tous les modules déjà créés auparavant par la communauté de NodeJS. Notez donc que sans connexion à Internet, vous ne pourrez pas faire fonctionner <b>NPM</b> correctement. </p>
     <h3 id="chap2p4">Quels modules choisir pour son projet</h3>
     <p>C'est une question pertinente. C'est une bonne question... une excellente question... </p>
     <p>Comme très souvent dans la vie de développeur, je vais devoir vous répondre "ça dépend". <br>Ça dépend de votre projet, de vos besoins, des fonctionnalités que vous allez vouloir développer ou utiliser.</p>
