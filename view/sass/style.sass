@@ -1,42 +1,122 @@
+// fonts
+@font-face
+  font-family: Ubuntu
+  src: url(../fonts/Ubuntu.ttf)
+@font-face
+  font-family: Roboto
+  src: url(../fonts/Roboto.ttf)
 // var
-$bgcolor: #69D
-$mbgcolor: #777
-$txcolor: black
-$urlcolor: #7E0
-$pcolor: white
+$bg: white
+$codebg: lightgrey
+$codesize: .9em
+$codenum: grey
+$codenumsize: .5em
+$boxbg: #DDD
+$main: #3A1
+$dark: black
+$light: white
+$url: #7E0
+$mainfont: Ubuntu
+$titlefont: Roboto
 // design
-$sidewidth: 220px
 $bradius: 4px
+$vpwidth: 600px
+@mixin button
+  text-align: center
+  text-decoration: none
+  transition: .2s ease
+  border-radius: $bradius
+  text-transform: uppercase
+  &:hover
+    transform: scale(.9)
 // body
 *
   box-sizing: border-box
+  font-family: $mainfont
 body
-  background: $bgcolor
-  color: $txcolor
-  padding: 0 30px
+  background: $bg
+  color: $dark
   margin: 0
 a
-  color: $urlcolor
+  color: $url
   &:hover
     text-decoration: none
-    color: $pcolor
+    color: $dark
+ul, ol
+  padding-left: 10px
 h1
-  display: block
-  width: calc(100%/2)
-  background: $urlcolor
-  color: $bgcolor
-  margin: 20px auto
-  padding: 10px
+  padding: 20px 0
+  margin: 0
   text-align: center
-  border-radius: $bradius
-.sidebar
+  font-family: $titlefont
+  a
+    color: $main
+    text-decoration: none
+    &:hover 
+      color: $main
+      text-decoration: underline
+.menu
   display: block
-  float: left
-  width: $sidewidth
-.content
-  border: 1px solid $txcolor
-  background: $mbgcolor
+  height: 29px
+  width: 100%
+  list-style: none
+  background: $main
+  margin: 0
+  li
+    float: left
+    margin: 0 10px
+    background: $main
+    a
+      display: block
+      padding: 5px
+      text-decoration: none
+      &:hover
+        background: $light
+        color: $main
+.box
+  max-width: $vpwidth
+  border: 1px solid $main
+  background: $boxbg
+  color: $dark
   padding: 20px 10px
   border-radius: 5px
-.innercontent
-  margin-left: $sidewidth+20px
+  margin: 15px auto
+  *
+    max-width: $vpwidth
+  a
+    color: $main
+  h2,h3,h4,h5,h6
+    width: 100%
+    border-bottom: 2px solid $main
+  h3:target
+    background: yellow
+  .btn
+    display: block
+    padding: 15px
+    background: $main
+    color: $light
+    margin: 20px auto
+    width: auto
+    @include button
+.hidden
+  display: none
+.box:target
+  display: block
+.code
+  background: $codebg
+  display: block
+  padding: 2px
+  margin: 2px
+  border: 1px solid $light
+  border-radius: $bradius
+  counter-reset: line
+  code
+    counter-increment: line
+    display: block
+    font-size: $codesize
+  code:before
+    content: counter(line)
+    font-size: $codenumsize
+    color: $codenum
+    padding-left: 3px
+    padding-right: 6px

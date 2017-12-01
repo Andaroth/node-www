@@ -1,9 +1,7 @@
 $("document").ready(function() {
-    $("#clicker").click(function(){
-        console.log("hey");
-        $.ajax({
-            type: "POST",
-            url: "http://localhost:81/clicked"
-        });
-    });
+  $("#toplink,.chaplink").click(function(){
+    $(".box").addClass("hidden");
+    var thisHref = $(this).attr("href");
+    $(thisHref).removeClass("hidden");
+  });
 });

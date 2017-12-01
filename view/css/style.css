@@ -1,40 +1,113 @@
+@font-face {
+  font-family: Ubuntu;
+  src: url(../fonts/Ubuntu.ttf); }
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/Roboto.ttf); }
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: Ubuntu; }
 
 body {
-  background: #69D;
+  background: white;
   color: black;
-  padding: 0 30px;
   margin: 0; }
 
 a {
   color: #7E0; }
   a:hover {
     text-decoration: none;
-    color: white; }
+    color: black; }
+
+ul, ol {
+  padding-left: 10px; }
 
 h1 {
-  display: block;
-  width: calc(100%/2);
-  background: #7E0;
-  color: #69D;
-  margin: 20px auto;
-  padding: 10px;
+  padding: 20px 0;
+  margin: 0;
   text-align: center;
-  border-radius: 4px; }
+  font-family: Roboto; }
+  h1 a {
+    color: #3A1;
+    text-decoration: none; }
+    h1 a:hover {
+      color: #3A1;
+      text-decoration: underline; }
 
-.sidebar {
+.menu {
   display: block;
-  float: left;
-  width: 220px; }
+  height: 29px;
+  width: 100%;
+  list-style: none;
+  background: #3A1;
+  margin: 0; }
+  .menu li {
+    float: left;
+    margin: 0 10px;
+    background: #3A1; }
+    .menu li a {
+      display: block;
+      padding: 5px;
+      text-decoration: none; }
+      .menu li a:hover {
+        background: white;
+        color: #3A1; }
 
-.content {
-  border: 1px solid black;
-  background: #777;
+.box {
+  max-width: 600px;
+  border: 1px solid #3A1;
+  background: #DDD;
+  color: black;
   padding: 20px 10px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin: 15px auto; }
+  .box * {
+    max-width: 600px; }
+  .box a {
+    color: #3A1; }
+  .box h2, .box h3, .box h4, .box h5, .box h6 {
+    width: 100%;
+    border-bottom: 2px solid #3A1; }
+  .box h3:target {
+    background: yellow; }
+  .box .btn {
+    display: block;
+    padding: 15px;
+    background: #3A1;
+    color: white;
+    margin: 20px auto;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.2s ease;
+    border-radius: 4px;
+    text-transform: uppercase; }
+    .box .btn:hover {
+      transform: scale(0.9); }
 
-.innercontent {
-  margin-left: 240px; }
+.hidden {
+  display: none; }
+
+.box:target {
+  display: block; }
+
+.code {
+  background: lightgrey;
+  display: block;
+  padding: 2px;
+  margin: 2px;
+  border: 1px solid white;
+  border-radius: 4px;
+  counter-reset: line; }
+  .code code {
+    counter-increment: line;
+    display: block;
+    font-size: 0.9em; }
+  .code code:before {
+    content: counter(line);
+    font-size: 0.5em;
+    color: grey;
+    padding-left: 3px;
+    padding-right: 6px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html> 
+<html lang="fr"> 
 <head> 
   <title>Homepage du serveur Node</title> 
   <meta name="description" content="Bienvenue dans l'enfer NodeJS !" /> 
@@ -7,21 +7,64 @@
   <link rel="stylesheet" href="./css/style.css" />
 </head> 
 <body> 
-  <h1>Homepage du serveur Node</h1> 
-  <div class="sidebar content">
-    <ol>
-      <li><a href="#">Installer Node.JS</a></li>
-      <li><a href="#">Installer des modules avec NPM</a></li>
-      <li><a href="#">Créer un serveur HTTP avec express</a></li>
-      <li><a href="#">Créer un chat avec express et socket.io</a></li>
-      <li><a href="#">Les événements et AJAX</a></li>
-    </ol>
-  </div>
-  <div class="content innercontent">
+  <h1><a id="toplink" href="#home">Homepage du serveur Node</a></h1> 
+  <ul class="menu">
+    <li><a class="chaplink" href="#installer">Installer</a></li>
+    <li><a class="chaplink" href="#npm">NPM</a></li>
+    <li><a class="chaplink" href="#">express</a></li>
+    <li><a class="chaplink" href="#">socket.io</a></li>
+    <li><a class="chaplink" href="#">Événements</a></li>
+  </ul>
+  <div id="home" class="box">
     <h2>Bienvenue !</h2>
     <p>Bienvenue sur ma HomePage sous Node.JS ! </p>
     <p>Ici, on a pas vraiment envie d'utiliser Nginx ou Apache pour servir des pages web à un client de type browser. <br/>Je vais tenter de vous montrer comment installer la dernière version de Node.JS sur votre machine et comment vous en servir.</p>
-    <p>Vous trouverez la liste des chapitres de ce cours dans la sidebar moche de ce site laid à crever.</p>
+    <p>Vous trouverez la liste des chapitres de ce cours dans le menuche de ce site laid à crever.</p>
+    <p>Vous pouvez passer au premier chapitre de ce cours en cliquant sur <a class="chaplink" href="#installer">le chapitre d'installation</a> !</p>
+  </div>
+  <div id="installer" class="box hidden">
+    <h2>Installer la dernière version de Node.JS</h2>
+    <p>Bienvenue dans le premier chapitre de Node.</p>
+    <p>Nous allons voir comment installer NodeJS et le mettre à jour à sa dernière version. Cela vous permettra d'utiliser le gestionnaire de package NPM pour installer des modules indispensables tels que express ou socket.io !</p>
+    <p>Au cours de ce chapitre, nous allons également installer NVM, qui vous permettra de changer à volonté de version de NodeJS.</p>
+    <p>Voici les étapes que nous allons devoir réaliser pour arriver à la fin de ce chapitre :</p>
+    <ol>
+      <li><a href="#chap1p1">Télécharger NodeJS</a></li>
+      <li><a href="#chap1p1a">Installation en ligne de commandes</a></li>
+      <li><a href="#chap1p2">Télécharger NVM</a></li>
+      <li><a href="#chap1p2">Mettre à jour</a></li>
+    </ol>
+    <h3 id="chap1p1">Télécharger NodeJS</h3>
+    <p>
+      Pour commencer, pas de surprise: vous devez installer NodeJS sur votre machine, et donc le télécharger. </p>
+    <p>
+      La méthode simple, rendez-vous <a href="https://nodejs.org/en/download/">sur le site officiel de Node</a>. <br/>Sur cette page, vous avez une liste quasi-exhaustive de la plupart des systèmes d'exploitation. Choisissez le vôtre (moi c'est Windows 10 64bits) et lancez l'éxécutable, installez et bim. Vous aurez la toute dernière version de NodeJS ainsi que NPM. </p>
+    <p>
+      L'installation directe par l'exécutable, le deb, etc... peut parfois poser problème. <br/>Je pense particulièrement aux utilisateurs de distributions Linux comme Debian, RHEL, etc... ou même aux utilisateurs qui préfèrent tout installer en lignes de commandes dans un terminal. </p>
+    <h3 id="chap1p1a">Installation en lignes de commandes (Linux)</h3>
+    <p>Pour beaucoup, l'utilisation du terminal peut-être assez effrayante. La vérité qui se cache derrière suit une logique pourtant assez simple. <br/>Heureusement, je ne vous ferai pas un cours de lignes de commandes, je vais juste vous indiquer la méthode la plus simple pour installer Node tout en terminal.</p>
+    <p>Nous avons besoin de télécharger et installer le paquet Node, commencez donc par ouvrir votre terminal. Entrez la commande suivante:</p>
+    <div class="code">
+      <code>sudo apt-get install -y nodejs</code>
+      <code>node -v</code>
+    </div>
+    <p>Vous avez donc maintenant NodeJS. <br/>Si je ne m'abuse, le terminal devrait vous dire que vous vous trouvez en version 4 ou quelque-chose en dessous de 6, ce qui nous embête pas mal car elle ne comprend ni gestionnaire de paquets, ni gestionnaire de version. <br/>C'est pourquoi nous allons devoir installer NVM tout de suite !</p>
+    <h3 id="chap1p2">Télécharger NVM</h3>
+    <p>Comme vous l'aurez sans doute compris, NVM va vous permettre de gérer votre version de NodeJS. Seulement, le problème est qu'il n'est pas présent de base avec Node, nous allons donc l'installer !</p>
+    <p>Une fois de plus, nous allons devoir taper une commande sur notre terminal :</p>
+    <div class="code">
+      <code>curl https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash</code>
+    </div>
+    <h3 id="chap1p3">Mettre à jour NodeJS avec NVM</h3>
+    <p>Vous pouvez désormais installer la version actuelle de NodeJS à l'aide de NVM avec la petite ligne de terminal suivante:</p>
+    <div class="code">
+      <code>sudo nvm install current</code>
+    </div>
+    <p>Quand c'est fait, le terminal devrait vous indiquer un message comme <br/><cite>Now using node v9.2.0 (npm v5.5.1)</cite>.<br/> Si c'est en effet le cas, félicitations !</p>
+    <h3>Ensuite</h3>
+    <p>Bon bon bon ! </p>
+    <p>Vous disposez maintenant de NodeJS sur votre machine. Vous avez NVM pour gérer sa version et vous pouvez désormais utiliser <strong>NPM</strong>, qui est totalement indispensable si vous désirez développer vos propres applications en Node.</p>
+    <p>Ne perdons donc pas une seconde et rendons-nous bien vite au <a href="#npm" class="btn chaplink">chapitre sur NPM</a></p>
   </div>
   <script src="./js/jquery.min.js"></script>
   <script src="./js/app.js"></script>
