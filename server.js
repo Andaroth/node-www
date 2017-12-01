@@ -1,5 +1,6 @@
 var serverinit = function() {
     // Modules
+    var ejs = require('ejs'); // EJS pour user des variables dans les .html
     var express = require("express"); // On appelle le module "express"
     var app = express(); // L'app va utiliser express
     var fs = require("fs"); // Pour charger un fichier chez le client
@@ -42,7 +43,7 @@ var serverinit = function() {
         notFound(res);
     });
     
-    app.listen(80);
+    app.listen(8080);
 }; // var init
 
 serverinit(); // Lancer le serveur

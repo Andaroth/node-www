@@ -1,15 +1,29 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html> 
-   <head> 
-       <title>Homepage du serveur Node</title> 
-       <meta name="description" content="Bienvenue dans l'enfer NodeJS !" /> 
-       <meta charset="utf-8" /> 
-   </head> 
-   <body> 
-       <h1>Homepage du serveur Node</h1> 
-       <p>Bienvenue !</p>
-       
-       <script src="./js/jquery.min.js"></script>
-       <script src="./js/app.js"></script>
-   </body> 
+<head> 
+  <title>Homepage du serveur Node</title> 
+  <meta name="description" content="Bienvenue dans l'enfer NodeJS !" /> 
+  <meta charset="utf-8" /> 
+  <link rel="stylesheet" href="./css/style.css" />
+</head> 
+<body> 
+  <h1>Homepage du serveur Node</h1> 
+  <div class="sidebar content">
+    <ol>
+      <li><a href="#">Installer Node.JS</a></li>
+      <li><a href="#">Installer des modules avec NPM</a></li>
+      <li><a href="#">Créer un serveur HTTP avec express</a></li>
+      <li><a href="#">Créer un chat avec express et socket.io</a></li>
+      <li><a href="#">Les événements et AJAX</a></li>
+    </ol>
+  </div>
+  <div class="content innercontent">
+    <h2>Bienvenue !</h2>
+    <p>Bienvenue sur ma HomePage sous Node.JS ! </p>
+    <p>Ici, on a pas vraiment envie d'utiliser Nginx ou Apache pour servir des pages web à un client de type browser. <br/>Je vais tenter de vous montrer comment installer la dernière version de Node.JS sur votre machine et comment vous en servir.</p>
+    <p>Vous trouverez la liste des chapitres de ce cours dans la sidebar moche de ce site laid à crever.</p>
+  </div>
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/app.js"></script>
+</body> 
 </html>

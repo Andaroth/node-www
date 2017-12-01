@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  background: #69D;
+  color: black;
+  padding: 0 30px;
+  margin: 0; }
+
+a {
+  color: #7E0; }
+  a:hover {
+    text-decoration: none;
+    color: white; }
+
+h1 {
+  display: block;
+  width: calc(100%/2);
+  background: #7E0;
+  color: #69D;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px; }
+
+.sidebar {
+  display: block;
+  float: left;
+  width: 220px; }
+
+.content {
+  border: 1px solid black;
+  background: #777;
+  padding: 20px 10px;
+  border-radius: 5px; }
+
+.innercontent {
+  margin-left: 240px; }
+
+/*# sourceMappingURL=style.css.map */

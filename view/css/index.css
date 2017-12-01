@@ -1,0 +1,14 @@
+:root {
+  --bgcolor: black;
+  --txcolor: white;
+  --urlcolor: red;
+}
+
+body {
+  background: var(--bgcolor);
+  color: var(--txcolor);
+}
+
+a {
+  color: var(--urlcolor);
+}

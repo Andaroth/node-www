@@ -1,0 +1,42 @@
+// var
+$bgcolor: #69D
+$mbgcolor: #777
+$txcolor: black
+$urlcolor: #7E0
+$pcolor: white
+// design
+$sidewidth: 220px
+$bradius: 4px
+// body
+*
+  box-sizing: border-box
+body
+  background: $bgcolor
+  color: $txcolor
+  padding: 0 30px
+  margin: 0
+a
+  color: $urlcolor
+  &:hover
+    text-decoration: none
+    color: $pcolor
+h1
+  display: block
+  width: calc(100%/2)
+  background: $urlcolor
+  color: $bgcolor
+  margin: 20px auto
+  padding: 10px
+  text-align: center
+  border-radius: $bradius
+.sidebar
+  display: block
+  float: left
+  width: $sidewidth
+.content
+  border: 1px solid $txcolor
+  background: $mbgcolor
+  padding: 20px 10px
+  border-radius: 5px
+.innercontent
+  margin-left: $sidewidth+20px
