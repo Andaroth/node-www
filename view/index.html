@@ -48,7 +48,7 @@
     <p>Pour beaucoup, l'utilisation du terminal peut-être assez effrayante. La vérité qui se cache derrière suit une logique pourtant assez simple. <br>Heureusement, je ne vous ferai pas un cours de lignes de commandes, je vais juste vous indiquer la méthode la plus simple pour installer Node tout en terminal.</p>
     <p>Nous avons besoin de télécharger et installer le paquet Node, commencez donc par ouvrir votre terminal. Entrez la commande suivante:</p>
     <div class="code">
-      <code>sudo apt-get install -y nodejs</code>
+      <code><span class="sudo">sudo </span>apt-get install -y nodejs</code>
       <code>node -v</code>
     </div>
     <p>Vous avez donc maintenant NodeJS. <br>Si je ne m'abuse, le terminal devrait vous dire que vous vous trouvez en version 4 ou quelque-chose en dessous de 6, ce qui nous embête pas mal car elle ne comprend ni gestionnaire de paquets, ni gestionnaire de version. <br>C'est pourquoi nous allons devoir installer <b>NVM</b> tout de suite !</p>
@@ -61,7 +61,7 @@
     <h3 id="chap1p3">Mettre à jour NodeJS avec <b>NVM</b></h3>
     <p>Vous pouvez désormais installer la version actuelle de NodeJS à l'aide de <b>NVM</b> avec la petite ligne de terminal suivante:</p>
     <div class="code">
-      <code>sudo nvm install current</code>
+      <code><span class="sudo">sudo </span>nvm install current</code>
     </div>
     <p>Quand c'est fait, le terminal devrait vous indiquer un message comme <br><cite>Now using node v9.2.0 (npm v5.5.1)</cite>.<br> Si c'est en effet le cas, félicitations, vous venez de finir ce chapitre avec succès !</p>
     <h3>Ensuite</h3>
@@ -89,13 +89,13 @@
     <p>Nous allons passer les deux méthodes en revue, vite fait, pour que vous compreniez un peu mieux de quoi il s'agit. </p>
     <p>Comme pour <b>NVM</b>, <b>NPM</b> s'utilise en lignes de commandes via le terminal.</p>
     <div class="code">
-      <code>sudo npm install <b>-g</b> <i>create-react-app</i></code>
+      <code><span class="sudo">sudo -E </span>npm install <b>-g</b> <i>create-react-app</i></code>
     </div>
     <p>Dans l'exemple ci-dessus, nous avons <cite>-g</cite> qui va servir à indiquer au manager que l'on souhaite installer un package globalement. <br>Dans cet exemple, le paquet en question est <i>Create React App</i>, qui permet de générer un projet en <i>React</i> sans devoir trouver les dépendances vous-même, sans devoir écrire tous les fichiers de base qui font fonctionner ce genre d'applications. Vous gagnerez alors des heures de préparation.</p>
     <p>Dans cette méthode, l'avantage est de pouvoir utiliser le module <cite>create-react-app</cite> où l'on veut. </p>
     <p>À l'opposé, nous avons la méthode d'installation locale, sans <i>-g</i> :</p>
     <div class="code">
-      <code>sudo npm install <i>express</i></code>
+      <code><span class="sudo">sudo -E </span>npm install <i>express</i></code>
     </div>
     <p>Cette commande plus courte permet d'installer, en l'occurence, <cite>express</cite> <strong>dans un projet existant</strong>.</p>
     <p>Notez que cette méthode installera le module uniquement dans le projet de votre choix. <i>Il convient bien entendu que votre terminal soit dans le bon répertoire sinon ça ne sert à rien.</i> </p>
