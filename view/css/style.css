@@ -99,8 +99,7 @@ h1 {
   padding: 0;
   border: 1px solid #FFF;
   border-radius: 4px;
-  counter-reset: line;
-  overflow-x: scroll; }
+  counter-reset: line; }
   .code pre {
     counter-increment: line;
     height: 20px;
@@ -168,6 +167,9 @@ footer {
       .menu li a:hover {
         background: #3A1;
         color: #7E0; }
+
+  .code {
+    overflow-x: scroll; }
 
   .nomobile {
     display: none; }
