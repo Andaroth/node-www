@@ -145,7 +145,7 @@ footer {
   footer a:hover {
     color: #FFF; }
 
-.hidden {
+.hidden, .mobileonly {
   display: none; }
 
 @media screen and (max-width: 800px) {
@@ -168,6 +168,9 @@ footer {
         color: #7E0; }
 
   .nomobile {
-    display: none; } }
+    display: none; }
+
+  .mobileonly {
+    display: initial; } }
 
 /*# sourceMappingURL=style.css.map */
