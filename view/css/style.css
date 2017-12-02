@@ -122,6 +122,14 @@ h1 {
     color: #3A1; }
   .code .com {
     color: #FFF; }
+  .code .var {
+    color: #060; }
+  .code .fun {
+    color: #C00; }
+  .code .ret {
+    color: #00C; }
+  .code .npm {
+    color: #C61; }
 
 footer {
   display: block;
@@ -139,15 +147,23 @@ footer {
   display: none; }
 
 @media screen and (max-width: 600px) {
-  h1 {
-    border-bottom: 10px solid #3A1;
-    font-size: 1em; }
-
   .box {
     border: 0;
     border-radius: 0;
     padding: 10px;
     margin: 0; }
+
+  .menu {
+    height: auto; }
+    .menu li {
+      float: initial;
+      margin: 0;
+      border-bottom: 1px solid #7E0; }
+      .menu li:last-child {
+        border-bottom: 0; }
+      .menu li a:hover {
+        background: #3A1;
+        color: #7E0; }
 
   .nomobile {
     display: none; } }

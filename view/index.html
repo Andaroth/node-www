@@ -9,13 +9,13 @@
 <body> 
   <h1><a id="toplink" href="#home"><span class="nomobile">Apprendre </span>NodeJS<span class="nomobile"> avec Lovelace</span></a></h1> 
   <nav>
-    <ul class="menu nomobile">
+    <ul class="menu">
       <li><a class="chaplink" href="#installer">Installer <span class="hidden">NodeJS</span></a></li>
       <li><a class="chaplink" href="#npm"><span class="hidden">Utiliser </span>NPM</a></li>
       <li><a href="#modules" class="chaplink"><span class="hidden">Que sont les </span>Modules<span class="hidden"> ?</span></a></li>
-      <li><a class="chaplink" href="#express"><span class="hidden">Faire un serveur en </span>express</a></li>
+      <!--<li><a class="chaplink" href="#express"><span class="hidden">Faire un serveur en </span>express</a></li>
       <li><a class="chaplink" href="#socketio"><span class="hidden">Faire un chat avec </span>socket.io</a></li>
-      <li><a class="chaplink" href="#evenements"><span class="hidden">Que sont les </span>Événements<span class="hidden"> ?</span></a></li>
+      <li><a class="chaplink" href="#evenements"><span class="hidden">Que sont les </span>Événements<span class="hidden"> ?</span></a></li>-->
     </ul>
   </nav>
   <section id="home" class="box">
@@ -33,7 +33,6 @@
     <p>Bienvenue dans le premier chapitre de Node.</p>
     <p>Nous allons voir comment installer NodeJS et le mettre à jour à sa dernière version. Cela vous permettra d'utiliser le gestionnaire de package <b>NPM</b> pour installer des modules indispensables tels que <i>express</i> ou <i>socket.io</i> !</p>
     <p>Au cours de ce chapitre, nous allons également installer <b>NVM</b>, qui vous permettra de changer à volonté de version de NodeJS.</p>
-    <p>Voici les étapes que nous allons devoir réaliser pour arriver à la fin de ce chapitre :</p>
     <!--<ol>
       <li><a href="#chap1p1">Télécharger NodeJS</a></li>
       <li><a href="#chap1p1a">Installation en ligne de commandes</a></li>
@@ -83,27 +82,43 @@
       <li><a href="#chap2p3">Comment s'en servir</a></li>
       <li><a href="#chap2p4">Quels modules utiliser</a></li>
     </ol>-->
-    <h3 id="chap2p1">Qu'est-ce que <b>NPM</b></h3>
+    <!--<h3 id="chap2p1">Qu'est-ce que <b>NPM</b></h3>-->
     <p><b>NPM</b> (on l'a beaucoup lu en à peine 15 secondes, c'est chaud) signifie <strong>Node Package Manager</strong>. <br>Ce petit outil, néanmoins très complet, va nous permettre d'installer des packages ou des modules dans NodeJS ou plus spécifiquement dans nos projets.</p>
     <h3 id="chap2p2">Pourquoi s'en servir</h3>
     <p>Les modules vont vous permettre de créer des applications rapidement, sans devoir réinventer systématiquement la roue. Ils sont incontournables dans 99,99% des projets en NodeJS de nos jours. </p>
     <p>Même le serveur HTTP de ce site est fait en node et utilise plusieurs modules tels que <i>express</i> ou <i>ejs</i>. </p>
-    <h3 id="chap2p3">Comment s'en servir</h3>
+    <!--<h3 id="chap2p3">Comment s'en servir</h3>-->
+    <h3>Initialiser un projet</h3>
+    <p>Quand on initialise un projet avec npm , celui ci créer un fichier package.json.Ce fichier contient non seulement le nom et la version du projet mais aussi, tout les modules utilisés par le projet.</p>
+    <p>Cela vous servira à lister tout les modules dont vous avez besoin. Ce qui vous permettera de tous les réinstaller pas la suite en cas de besoin.</p>
+    <p>Pour initialiser un projet , faites la commande suivante :</p>
+    <div class="code">
+      <pre><span class="npm">npm</span> init</pre>
+    </div>
+    <p>Npm vous demandera le nom et la version du projet.Les modules que vous installerez y seront ajouté à la liste au moment ou vous les installerez.</p>
+    <h3>Installation globale ou locale</h3>
     <p><b>NPM</b> s'utilise de deux manières. Vous pouvez soit installer un module globalement dans NodeJS, ce qui vous permettra de l'utiliser dans tous vos projets, soit installer un module uniquement dans un projet en particulier, si jamais vous n'en avez pas besoin ailleurs. </p>
     <p>Nous allons passer les deux méthodes en revue, vite fait, pour que vous compreniez un peu mieux de quoi il s'agit. </p>
     <p>Comme pour <b>NVM</b>, <b>NPM</b> s'utilise en lignes de commandes via le terminal.</p>
     <div class="code">
-      <pre><span class="sudo">sudo -E </span>npm install <b>-g</b> <i>create-react-app</i></pre>
+      <pre><span class="sudo">sudo -E </span><span class="npm">npm</span> install <b>-g</b> <i>create-react-app</i></pre>
     </div>
     <p>Dans l'exemple ci-dessus, nous avons <cite>-g</cite> qui va servir à indiquer au manager que l'on souhaite installer un package globalement. <br>Dans cet exemple, le paquet en question est <i>Create React App</i>, qui permet de générer un projet en <i>React</i> sans devoir trouver les dépendances vous-même, sans devoir écrire tous les fichiers de base qui font fonctionner ce genre d'applications. Vous gagnerez alors des heures de préparation.</p>
     <p>Dans cette méthode, l'avantage est de pouvoir utiliser le module <cite>create-react-app</cite> où l'on veut. </p>
     <p>À l'opposé, nous avons la méthode d'installation locale, sans <i>-g</i> :</p>
     <div class="code">
-      <pre><span class="sudo">sudo -E </span>npm install <i>express</i></pre>
+      <pre><span class="sudo">sudo -E </span><span class="npm">npm</span> install <i>express</i></pre>
     </div>
     <p>Cette commande plus courte permet d'installer, en l'occurence, <cite>express</cite> <strong>dans un projet existant</strong>.</p>
-    <p>Notez que cette méthode installera le module uniquement dans le projet de votre choix. <i>Il convient bien entendu que votre terminal soit dans le bon répertoire sinon ça ne sert à rien.</i> </p>
-    <p>Dans tous les cas, <b>NPM</b> va trouver en ligne, dans une vaste base de donnée regroupant tous les modules déjà créés auparavant par la communauté de NodeJS. Notez donc que sans connexion à Internet, vous ne pourrez pas faire fonctionner <b>NPM</b> correctement. </p>
+    <p>Notez que cette méthode installera le module uniquement dans le projet de votre choix. <i>Il convient bien entendu que votre terminal soit dans le bon répertoire sinon ça ne sert à rien.</i></p>
+    <h3>Mettre un paquet à jour</h3>
+    <div class="code">
+      <pre><span class="npm">npm</span> update <b>-g</b> <i>create-react-app</i></pre>
+    </div>
+    <p>Cette commande de terminal va mettre à jour, dans cet exemple, le paquet <i>create-react-app</i>. Si l'on ne met rien, le gestionnaire va mettre à jour tous les paquets.</p>
+    <p>Utilisez <b>-g</b> pour choisir de mettre à jour tous vos paquets. Enlevez-le si vous voulez juste mettre à jour ceux du projet.</p>
+    <p>Dans tous les cas, <b>NPM</b> va trouver en ligne, dans une vaste base de donnée, tous les modules déjà créés auparavant par la communauté de NodeJS. Notez donc que sans connexion à Internet, vous ne pourrez pas faire fonctionner <b>NPM</b> correctement. </p>
+    <p>Le site <a href="npmjs.com">npmjs.com</a> est la source depuis laquelle npm télécharge tous les modules. Vous trouverez bien plus de renseignements sur <a href="https://docs.npmjs.com/">la documentation en ligne de npmjs.com</a>.</p>
     <h3 id="chap2p4">Quels modules choisir pour son projet</h3>
     <p>C'est une question pertinente. C'est une bonne question... une excellente question... </p>
     <p>Comme très souvent dans la vie de développeur, je vais devoir vous répondre "ça dépend". <br>Ça dépend de votre projet, de vos besoins, des fonctionnalités que vous allez vouloir développer ou utiliser.</p>
@@ -116,56 +131,56 @@
       <p>Par définition, un module est un fichier contenant plusieurs codes (variables, fonctions, objets, classes etc.) pouvant être appelés dans un autre fichier. Pensez un peu à vos links css ou vos scripts JS sur vos fichiers html, est bien c’est presque pareil ! Mais attention, je dis presque... <br>Comment cela fonctionne  ?</p>
       <p>Tout d’abord, il nous faut créer une page « app.js » sur laquelle écrire votre code</p>
       <div class="code">
-        <pre>var sayHelloInEnglish= function() {</pre>
-        <pre>  return "HELLO";</pre>
+        <pre><span class="var">var</span> <span class="fun"><span class="fun">sayHelloInEnglish</span></span> = function() {</pre>
+        <pre>  <span class="ret">return</span> "HELLO";</pre>
         <pre>}</pre>
       </div>
       <p>Une fois cela fait, il faut expliquer à l’ordinateur que nous voulons exporter cet élément pour l’utiliser sur une autre page JS, que nous allons appeler ici « use.js »</p>
       <h3>L'export</h3>
       <p>Ici, rien de plus simple, à la fin de votre code, ajoutez :</p>
       <div class="code">
-        <pre>module.exports.<span class="sudo">[le nom que vous voulez]</span> =  <span class="sudo">les nom de votre variable, fonction, etc...</span></pre>
+        <pre><span class="ret">module</span>.<span class="ret">exports</span>.<span class="sudo">[nom désiré]</span> =  <span class="sudo">"noms de variable/fonction/etc"</span>;</pre>
       </div>
       <p>Dans cet exemple, nous aurons ceci :</p>
       <div class="code">
-        <pre>var sayHelloInEnglish= function() {</pre>
-        <pre>    return "HELLO";</pre>
+        <pre><span class="var">var</span> <span class="fun"><span class="fun">sayHelloInEnglish</span></span> = function() {</pre>
+        <pre>  <span class="ret">return</span> "HELLO";</pre>
         <pre>}</pre>
-        <pre>module.exports.English= sayHelloInEnglish ;</pre>
+        <pre><span class="ret">module</span>.<span class="ret">exports</span>.English= <span class="fun">sayHelloInEnglish</span>;</pre>
       </div>
       <h3>Require</h3>
       <p>Maintenant que le module est exporté, il faut l’importer dans use.js. pour ce faire, il suffit d’utiliser la méthode « require » dans le fichier use.js qui va aller chercher votre module et le rendre utilisable.</p>
       <p>Voici son mode d’emploi, premièrement la méthode doit être appelée dans une variable afin de pouvoir l’utiliser :</p>
       <div class="code">
-        <pre>var Something= require();</pre>
+        <pre><span class="var">var</span> <span class="fun">Something</span>= require();</pre>
       </div>
       <p>Puis il faut indiquer la position du module à la méthode require, tout comme le href dans un link css :</p>
       <div class="code">
-        <pre>var Something= require("app.js");</pre>
+        <pre><span class="var">var</span> <span class="fun">Something</span>= require(<span class="sudo">"app.js"</span>);</pre>
       </div>
-      <p>Et voilà, votre fonction est importée, maintenant pour l’utiliser il vous suffit de l’appeler sous le nom de votre require plus le nom que vous avez donné à votre export (dans notre cas le Something et le English).</p>
+      <p>Et voilà, votre fonction est importée, maintenant pour l’utiliser il vous suffit de l’appeler sous le nom de votre require plus le nom que vous avez donné à votre export (dans notre cas le <span class="fun">Something</span> et le English).</p>
       <p>Dans notre exemple :</p>
       <div class="code">
-        <pre>var Something= require(«app.js ») ;</pre>
-        <pre>console.log(Something.English ()) // va nous logger HELLO ;</pre>
+        <pre><span class="var">var</span> <span class="fun">Something</span>= require(<span class="sudo">"app.js"</span>);</pre>
+        <pre>console.log(<span class="fun">Something</span>.English()); <span class="com">// va nous logger HELLO</span></pre>
       </div>
       <p><b>Pourquoi devoir donner un nom à notre export ?</b></p>
       <p>Très souvent dans des modules, il n’y a pas qu’un seul élément, il faut donc donner un nom à nos différents éléments pour pouvoir les utiliser, par exemple :</p>
       <div class="code">
-        <pre>var sayHelloInEnglish= function() {</pre>
-        <pre>  return "HELLO";</pre>
+        <pre><span class="var">var</span> <span class="fun">sayHelloInEnglish</span>= function() {</pre>
+        <pre>  <span class="ret">return</span> "HELLO";</pre>
         <pre>}</pre>
-        <pre>var sayHelloInSpanish= function() {</pre>
-        <pre>  return "Hola";</pre>
+        <pre><span class="var">var</span> <span class="fun">sayHelloInSpanish</span>= function() {</pre>
+        <pre>  <span class="ret">return</span> "Hola";</pre>
         <pre>}</pre>
-        <pre>module.exports.English= sayHelloInEnglish ;</pre>
-        <pre>module.exports.Spanish=  sayHelloInSpanish ;</pre>
+        <pre><span class="ret">module</span>.<span class="ret">exports</span>.English= <span class="fun">sayHelloInEnglish</span>;</pre>
+        <pre><span class="ret">module</span>.<span class="ret">exports</span>.Spanish=  <span class="fun">sayHelloInSpanish</span>;</pre>
       </div>
       <p>Nous avons maintenant deux fonctions dans un seul module, toutes les deux importables et utilisables sous un seul et même require.</p>
       <div class="code">
-        <pre>var Something= require("app.js");</pre>
-        <pre>console.log(Something.English ()); <span class="com">// va nous logger HELLO</span></pre>
-        <pre>console.log(Something.Spanish ()); <span class="com">// va nous logger Hola</span></pre>
+        <pre><span class="var">var</span> <span class="fun">Something</span>= require(<span class="sudo">"app.js"</span>);</pre>
+        <pre>console.log(<span class="fun">Something</span>.English()); <span class="com">// va nous logger HELLO</span></pre>
+        <pre>console.log(<span class="fun">Something</span>.Spanish()); <span class="com">// va nous logger Hola</span></pre>
       </div>
       <p>Et voilà. <br>Pour plus d'info, n'hésitez pas à suivre <a href="https://www.youtube.com/watch?v=xHLd36QoS4k&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp&index=6">le cours de net ninja</a>, il est bien fait !</p>
       

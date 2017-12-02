@@ -131,6 +131,14 @@ h1
     color: $main
   .com
     color: #FFF
+  .var
+    color: #060
+  .fun
+    color: #C00
+  .ret
+    color: #00C
+  .npm
+    color: #C61
 footer
   display: block
   padding: 15px
@@ -147,13 +155,21 @@ footer
   display: none
 // mobile
 @media screen and (max-width:$vpwidth)
-  h1
-    border-bottom: 10px solid $main
-    font-size: 1em
   .box
     border: 0
     border-radius: 0
     padding: 10px
     margin: 0
+  .menu
+    height: auto
+    li
+      float: initial
+      margin: 0
+      border-bottom: 1px solid $url
+      &:last-child
+        border-bottom: 0
+      a:hover
+        background: $main
+        color: $url
   .nomobile
     display: none
