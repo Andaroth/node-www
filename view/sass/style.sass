@@ -13,9 +13,11 @@ $main: #3A1
 $dark: #030
 $light: #FFF
 $url: #7E0
+$codeheight: 30px
 // size
 $bradius: 4px
 $vpwidth: 600px
+// reusable
 @mixin button
   text-align: center
   text-decoration: none
@@ -24,6 +26,9 @@ $vpwidth: 600px
   text-transform: uppercase
   &:hover
     transform: scale(.9)
+@mixin codecomput
+  height: $codeheight
+  line-height: $codeheight
 // style
 *
   box-sizing: border-box
@@ -102,28 +107,30 @@ h1
 .code
   background: #CCC
   display: block
-  padding: 2px
-  margin: 2px
+  padding: 0
   border: 1px solid $light
   border-radius: $bradius
   counter-reset: line
-  code
+  pre
     counter-increment: line
+    height: 20px
     display: block
-    font-size: .9em
-    line-height: 15px
+    margin: 0
+    @include codecomput
     &:before
       display: block
       float: left
       width: 15px
       content: counter(line)
-      font-size: .5em
       color: grey
-      padding-left: 3px
+      padding-left: 6px
       margin-right: 6px
       border-right: 1px solid $light
+      @include codecomput
   .sudo
     color: $main
+  .com
+    color: #FFF
 footer
   display: block
   padding: 15px
