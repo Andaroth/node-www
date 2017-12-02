@@ -92,7 +92,7 @@
     <h3>Initialiser un projet</h3>
     <p>Quand on initialise un projet avec npm , celui ci créer un fichier package.json. Ce fichier contient non seulement le nom et la version du projet mais aussi, tout les modules utilisés par le projet.</p>
     <p>Cela vous servira à lister tout les modules dont vous avez besoin. Ce qui vous permettera de tous les réinstaller pas la suite en cas de besoin.</p>
-    <p>Pour initialiser un projet , faites la commande suivante :</p>
+    <p>Comme pour <b>NVM</b>, <b>NPM</b> s'utilise en lignes de commandes via le terminal. Pour initialiser un projet , faites donc la commande suivante :</p>
     <div class="code">
       <pre><span class="npm">npm</span> init </pre>
     </div>
@@ -100,13 +100,14 @@
     <h3>Installation globale ou locale</h3>
     <p><b>NPM</b> s'utilise de deux manières. Vous pouvez soit installer un module globalement dans NodeJS, ce qui vous permettra de l'utiliser dans tous vos projets, soit installer un module uniquement dans un projet en particulier, si jamais vous n'en avez pas besoin ailleurs. </p>
     <p>Nous allons passer les deux méthodes en revue, vite fait, pour que vous compreniez un peu mieux de quoi il s'agit. </p>
-    <p>Comme pour <b>NVM</b>, <b>NPM</b> s'utilise en lignes de commandes via le terminal.</p>
+    <h4>Globale</h4>
     <div class="code">
       <pre><span class="sudo">sudo -E </span><span class="npm">npm</span> install <b>-g</b> <i>create-react-app</i> </pre>
     </div>
     <p>Dans l'exemple ci-dessus, nous avons <cite>-g</cite> qui va servir à indiquer au manager que l'on souhaite installer un package globalement. <br>Dans cet exemple, le paquet en question est <i>Create React App</i>, qui permet de générer un projet en <i>React</i> sans devoir trouver les dépendances vous-même, sans devoir écrire tous les fichiers de base qui font fonctionner ce genre d'applications. Vous gagnerez alors des heures de préparation.</p>
     <p>Dans cette méthode, l'avantage est de pouvoir utiliser le module <cite>create-react-app</cite> où l'on veut. </p>
     <p>À l'opposé, nous avons la méthode d'installation locale, sans <i>-g</i> :</p>
+    <h4>Locale</h4>
     <div class="code">
       <pre><span class="sudo">sudo -E </span><span class="npm">npm</span> install <i>express</i> </pre>
     </div>
