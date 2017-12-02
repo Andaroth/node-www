@@ -163,6 +163,8 @@ footer {
       border-bottom: 1px solid #7E0; }
       .menu li:last-child {
         border-bottom: 0; }
+      .menu li a {
+        text-align: center; }
       .menu li a:hover {
         background: #3A1;
         color: #7E0; }
