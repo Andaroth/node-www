@@ -47,10 +47,3 @@ var serverinit = function() {
 }; // var init
 
 serverinit(); // Lancer le serveur
-
-var express = require("express");
-var pageEvent = express();
-pageEvent.post("/clicked", function(req, res) {
-    var thisTime = new Date();
-    console.log("<<< CLICKED AT '" + thisTime + "' FROM client"); 
-}).listen(81);

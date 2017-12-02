@@ -5,20 +5,15 @@
 @font-face
   font-family: Roboto
   src: url(../fonts/Roboto.ttf)
-// var
-$bg: white
-$codebg: lightgrey
-$codesize: .9em
-$codenum: grey
-$codenumsize: .5em
-$boxbg: #DDD
-$main: #3A1
-$dark: black
-$light: white
-$url: #7E0
 $mainfont: Ubuntu
 $titlefont: Roboto
-// design
+// colors
+$boxbg: #DDD
+$main: #3A1
+$dark: #030
+$light: #FFF
+$url: #7E0
+// size
 $bradius: 4px
 $vpwidth: 600px
 @mixin button
@@ -29,12 +24,11 @@ $vpwidth: 600px
   text-transform: uppercase
   &:hover
     transform: scale(.9)
-// body
+// style
 *
   box-sizing: border-box
   font-family: $mainfont
 body
-  background: $bg
   color: $dark
   margin: 0
 p
@@ -44,8 +38,6 @@ a
   &:hover
     text-decoration: none
     color: $dark
-.menu
-  padding-left: 0
 ol li 
   line-height: 160%
 h1
@@ -59,9 +51,9 @@ h1
     &:hover 
       color: $main
       text-decoration: underline
-
 .menu
   display: block
+  padding-left: 0
   height: 50px
   width: 100%
   list-style: none
@@ -71,14 +63,14 @@ h1
     float: left
     margin: 0 10px
     background: $main
-    a
-      height: 50px
-      display: block
-      padding: 15px 5px
-      text-decoration: none
-      &:hover
-        background: $light
-        color: $main
+  a
+    height: 50px
+    display: block
+    padding: 15px 5px
+    text-decoration: none
+    &:hover
+      background: $light
+      color: $main
 .box
   max-width: $vpwidth
   border: 1px solid $main
@@ -105,12 +97,10 @@ h1
     margin-bottom: 0
     width: auto
     @include button
-.hidden
-  display: none
 .box:target
   display: block
 .code
-  background: $codebg
+  background: #CCC
   display: block
   padding: 2px
   margin: 2px
@@ -120,16 +110,36 @@ h1
   code
     counter-increment: line
     display: block
-    font-size: $codesize
-    .sudo
-      color: $main
-  code:before
-    content: counter(line)
-    font-size: $codenumsize
-    color: $codenum
-    padding-left: 3px
-    padding-right: 6px
-@media screen and (max-width:600px)
+    font-size: .9em
+    line-height: 15px
+    &:before
+      display: block
+      float: left
+      width: 15px
+      content: counter(line)
+      font-size: .5em
+      color: grey
+      padding-left: 3px
+      margin-right: 6px
+      border-right: 1px solid $light
+  .sudo
+    color: $main
+footer
+  display: block
+  padding: 15px
+  text-align: center
+  width: 100%
+  background: $main
+  color: $light
+  *
+    margin: 0
+  a:hover
+    color: $light
+// dynamic
+.hidden
+  display: none
+// mobile
+@media screen and (max-width:$vpwidth)
   h1
     border-bottom: 10px solid $main
     font-size: 1em
