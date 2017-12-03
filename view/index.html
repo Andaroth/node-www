@@ -20,8 +20,8 @@
     </ul>
   </nav>
   <section id="home" class="box">
-    <h2>Bienvenue en enfer !</h2>
-    <p>Ceci est un cours pour Node.JS ! <br>Ici, c'est l'enfer du JavaScript xénosensible: on a pas du tout envie d'utiliser Nginx ou Apache pour servir des pages web à nos visiteurs, et encore moins envie d'utiliser mille langages différents aux syntaxes exotiques. </p>
+    <h2>Ceci est un cours de Node.JS !</h2>
+    <p>Ici, c'est l'enfer du JavaScript xénosensible: on a pas du tout envie d'utiliser Nginx ou Apache pour servir des pages web à nos visiteurs, et encore moins envie d'utiliser mille langages différents aux syntaxes exotiques. </p>
     <h3>Qu'est-ce que NodeJS</h3>
     <p>Il s'agit d'un framework en JavaScript. En gros, cela va vous permettre de créer des serveurs et des applications en n'utiliquant que du JavaScript. </p>
     <p>L'avantage de Node est de n'utiliser qu'un seul langage unificateur pour tous les morceaux de votre projet, plutôt que de jongler entre différents langages tels que le PHP, le Java, le XML, etc... </p>
@@ -102,14 +102,14 @@
     <p>Nous allons passer les deux méthodes en revue, vite fait, pour que vous compreniez un peu mieux de quoi il s'agit. </p>
     <h4>Globale</h4>
     <div class="code">
-      <pre><span class="sudo">sudo -E </span><span class="npm">npm</span> install <b>-g</b> <i>create-react-app</i> </pre>
+      <pre><span class="npm">npm</span> install <i>-g</i> <i>create-react-app</i> </pre>
     </div>
     <p>Dans l'exemple ci-dessus, nous avons <cite>-g</cite> qui va servir à indiquer au manager que l'on souhaite installer un package globalement. <br>Dans cet exemple, le paquet en question est <i>Create React App</i>, qui permet de générer un projet en <i>React</i> sans devoir trouver les dépendances vous-même, sans devoir écrire tous les fichiers de base qui font fonctionner ce genre d'applications. Vous gagnerez alors des heures de préparation.</p>
     <p>Dans cette méthode, l'avantage est de pouvoir utiliser le module <cite>create-react-app</cite> où l'on veut. </p>
     <p>À l'opposé, nous avons la méthode d'installation locale, sans <i>-g</i> :</p>
     <h4>Locale</h4>
     <div class="code">
-      <pre><span class="sudo">sudo -E </span><span class="npm">npm</span> install <i>express</i> </pre>
+      <pre><span class="npm">npm</span> install <i>express</i> </pre>
     </div>
     <p>Cette commande plus courte permet d'installer, en l'occurence, <cite>express</cite> <strong>dans un projet existant</strong>.</p>
     <p>Notez que cette méthode installera le module uniquement dans le projet de votre choix. <i>Il convient bien entendu que votre terminal soit dans le bon répertoire sinon ça ne sert à rien.</i></p>
@@ -118,7 +118,7 @@
       <pre><span class="npm">npm</span> update <b>-g</b> <i>create-react-app</i> </pre>
     </div>
     <p>Cette commande de terminal va mettre à jour, dans cet exemple, le paquet <i>create-react-app</i>. Si l'on ne met rien, le gestionnaire va mettre à jour tous les paquets.</p>
-    <p>Utilisez <b>-g</b> pour choisir de mettre à jour tous vos paquets. Enlevez-le si vous voulez juste mettre à jour ceux du projet.</p>
+    <p>Utilisez <i>-g</i> pour choisir de mettre à jour tous vos paquets. Enlevez-le si vous voulez juste mettre à jour ceux du projet.</p>
     <p>Dans tous les cas, <b>NPM</b> va trouver en ligne, dans une vaste base de donnée, tous les modules déjà créés auparavant par la communauté de NodeJS. Notez donc que sans connexion à Internet, vous ne pourrez pas faire fonctionner <b>NPM</b> correctement. </p>
     <p>Le site <a href="npmjs.com">npmjs.com</a> est la source depuis laquelle npm télécharge tous les modules. Vous trouverez bien plus de renseignements sur <a href="https://docs.npmjs.com/">la documentation en ligne de npmjs.com</a>.</p>
     <h3 id="chap2p4">Quels modules choisir pour son projet</h3>
