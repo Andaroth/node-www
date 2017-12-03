@@ -8,12 +8,13 @@
 $mainfont: Ubuntu
 $titlefont: Roboto
 // colors
+$bg: #FFF
 $boxbg: #DDD
 $main: #3A1
-$dark: #030
-$light: #FFF
+$nice: #333
+$dark: $nice
+$light: $bg
 $url: #7E0
-$codeheight: 30px
 // size
 $bradius: 4px
 $vpwidth: 800px
@@ -27,9 +28,10 @@ $vpwidth: 800px
   &:hover
     transform: scale(.9)
 @mixin codecomput
+  $codeheight: 30px
   height: $codeheight
   line-height: $codeheight
-  font-family: "Lucida Console", "Lucida Grande", monospace,sans-serif
+  font-family: "Lucida Console", "Lucida Grande", monospace, sans-serif
 // style
 *
   box-sizing: border-box
@@ -113,6 +115,7 @@ h1
   border-radius: $bradius
   counter-reset: line
   overflow-x: scroll
+  overflow-y: hidden
   pre
     counter-increment: line
     height: 20px
@@ -176,6 +179,7 @@ footer
       a:hover
         background: $main
         color: $url
+  // dynamic
   .nomobile
     display: none
   .mobileonly
