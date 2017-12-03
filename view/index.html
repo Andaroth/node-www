@@ -134,7 +134,7 @@
       <p>Tout d’abord, il nous faut créer une page « app.js » sur laquelle écrire votre code</p>
       <div class="code">
         <pre><span class="var">var</span> <span class="fun"><span class="fun">sayHelloInEnglish</span></span> = function() { </pre>
-        <pre>  <span class="ret">return</span> "HELLO"; </pre>
+        <pre>&ensp;<span class="ret">return</span> "HELLO"; </pre>
         <pre>} </pre>
       </div>
       <p>Une fois cela fait, il faut expliquer à l’ordinateur que nous voulons exporter cet élément pour l’utiliser sur une autre page JS, que nous allons appeler ici « use.js »</p>
@@ -146,7 +146,7 @@
       <p>Dans cet exemple, nous aurons ceci :</p>
       <div class="code">
         <pre><span class="var">var</span> <span class="fun"><span class="fun">sayHelloInEnglish</span></span> = function() { </pre>
-        <pre>  <span class="ret">return</span> "HELLO"; </pre>
+        <pre>&ensp;<span class="ret">return</span> "HELLO"; </pre>
         <pre>} </pre>
         <pre><span class="ret">module</span>.<span class="ret">exports</span>.English= <span class="fun">sayHelloInEnglish</span>; </pre>
       </div>
@@ -170,10 +170,10 @@
       <p>Très souvent dans des modules, il n’y a pas qu’un seul élément, il faut donc donner un nom à nos différents éléments pour pouvoir les utiliser, par exemple :</p>
       <div class="code">
         <pre><span class="var">var</span> <span class="fun">sayHelloInEnglish</span>= function() { </pre>
-        <pre>  <span class="ret">return</span> "HELLO"; </pre>
+        <pre>&ensp;<span class="ret">return</span> "HELLO"; </pre>
         <pre>} </pre>
         <pre><span class="var">var</span> <span class="fun">sayHelloInSpanish</span>= function() { </pre>
-        <pre>  <span class="ret">return</span> "Hola"; </pre>
+        <pre>&ensp;<span class="ret">return</span> "Hola"; </pre>
         <pre>} </pre>
         <pre><span class="ret">module</span>.<span class="ret">exports</span>.English= <span class="fun">sayHelloInEnglish</span>; </pre>
         <pre><span class="ret">module</span>.<span class="ret">exports</span>.Spanish=  <span class="fun">sayHelloInSpanish</span>; </pre>
@@ -189,7 +189,7 @@
   </section>
   <footer>
     <p>Cours créé par la Startup Lovelace à <a href="http://becode.org/">BeCode.org</a></p>
-    <small>Ce projest a été entièrement développé en NodeJS, bien entendu. ;) </small>
+    <small>Ce projet a été entièrement développé en NodeJS, bien entendu. ;) </small>
     <small>Le code source du projet disponible sur <a href="https://github.com/Andaroth/node-www">GitHub</a>. </small>
   </footer>
   <script src="./js/jquery.min.js"></script>
