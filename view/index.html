@@ -206,20 +206,20 @@
     <p>La première étape consistera à appeler la méthode "response.writeHead()" qui va définir le statut de notre requête http ainsi que le type de contenu que l'on souhaite retourner.</p>
     <p>Ensuite "response.write()" va tout simplement, permettre de concevoir notre document html passé en arguement. <br>Et enfin "response.end()" viendra signifier la fin de notre réponse.</p>
     <div class="code">
-      <pre>response.writeHead(200, {"Content-Type": "text/html"});</pre>
-      <pre>response.write(`</pre>
-      <pre>&ensp;&#x3C;!doctype html&#x3E;</pre>
-      <pre>&ensp;&#x3C;html lang=&#x22;en&#x22;&#x3E;</pre>
-      <pre>&ensp;&ensp;&#x3C;head&#x3E;</pre>
-      <pre>&ensp;&ensp;&ensp;&#x3C;meta charset=&#x22;UTF-8&#x22;&#x3E;</pre>
-      <pre>&ensp;&ensp;&ensp;&#x3C;title&#x3E;hello node&#x3C;/title&#x3E;</pre>
-      <pre>&ensp;&ensp;&#x3C;/head&#x3E;</pre>
-      <pre>&ensp;&ensp;&#x3C;body&#x3E;</pre>
-      <pre>&ensp;&ensp;&ensp;&#x3C;p&#x3E;Hello world&#x3C;/p&#x3E;</pre>
-      <pre>&ensp;&ensp;&#x3C;/body&#x3E;</pre>
-      <pre>&ensp;&#x3C;/html&#x3E;</pre>
+      <pre><span class="ret">response</span>.<span class="fun">writeHead</span>(200, {"Content-Type": "text/html"});</pre>
+      <pre><span class="ret">response</span>.<span class="fun">write</span>(`</pre>
+      <pre><span class="com">&#x3C;!doctype html&#x3E;</span></pre>
+      <pre><span class="sudo">&#x3C;html lang=&#x22;en&#x22;&#x3E;</span></pre>
+      <pre>&ensp;<span class="tag">&#x3C;head&#x3E;</span></pre>
+      <pre>&ensp;&ensp;<span class="tag">&#x3C;meta</span> charset=<span class="sudo">&#x22;UTF-8&#x22;</span><span class="tag">&#x3E;</span></pre>
+      <pre>&ensp;&ensp;<span class="tag">&#x3C;title&#x3E;</span>hello node<span class="tag">&#x3C;/title&#x3E;</span></pre>
+      <pre>&ensp;<span class="tag">&#x3C;/head&#x3E;</span></pre>
+      <pre>&ensp;<span class="tag">&#x3C;body&#x3E;</span></pre>
+      <pre>&ensp;&ensp;<span class="tag">&#x3C;p&#x3E;</span>Hello world<span class="tag">&#x3C;/p&#x3E;</span></pre>
+      <pre>&ensp;<span class="tag">&#x3C;/body&#x3E;</span></pre>
+      <pre><span class="sudo">&#x3C;/html&#x3E;</span></pre> 
       <pre>`);</pre>
-      <pre>response.end();</pre>
+      <pre><span class="ret">response</span>.<span class="ret">end</span>();</pre>
     </div>
     <h3>La méthode listen</h3>
     <p>La dernière méthode appelée dans notre fichier sera "server.listen()", qui va lier notre serveur au port de notre choix. Ici nous utilisons le port 8080 mais comme mentionné juste avant, libre à vous d'utiliser un autre port afin d'accéder à votre seveur web:</p>
@@ -232,24 +232,24 @@
     </div>
     <p>Le code complet donne ceci :</p>
     <div class="code">
-      <pre>var http = require("http");</pre>
-      <pre>var server = http.createServer(function (request, response) {</pre>
-      <pre>&ensp;response.writeHead(200, {"Content-Type": "text/html"});</pre>
-      <pre>&ensp;response.write(`</pre>
-      <pre>&ensp;&#x3C;!doctype html&#x3E;</pre>
-      <pre>&ensp;&#x3C;html lang=&#x22;en&#x22;&#x3E;</pre>
-      <pre>&ensp;&ensp;&#x3C;head&#x3E;</pre>
-      <pre>&ensp;&ensp;&ensp;&#x3C;meta charset=&#x22;UTF-8&#x22;&#x3E;</pre>
-      <pre>&ensp;&ensp;&ensp;&#x3C;title&#x3E;hello node&#x3C;/title&#x3E;</pre>
-      <pre>&ensp;&ensp;&#x3C;/head&#x3E;</pre>
-      <pre>&ensp;&ensp;&#x3C;body&#x3E;</pre>
-      <pre>&ensp;&ensp;&ensp;&#x3C;p&#x3E;Hello world&#x3C;/p&#x3E;</pre>
-      <pre>&ensp;&ensp;&#x3C;/body&#x3E;</pre>
-      <pre>&ensp;&#x3C;/html&#x3E;</pre> 
+      <pre><span class="var">var</span> http = <span class="fun">require</span>("http");</pre>
+      <pre><span class="var">var</span> server = http.<span class="fun">createServer</span>(function (request, response) {</pre>
+      <pre>&ensp;<span class="ret">response</span>.<span class="fun">writeHead</span>(200, {"Content-Type": "text/html"});</pre>
+      <pre>&ensp;<span class="ret">response</span>.<span class="fun">write</span>(`</pre>
+      <pre>&ensp;<span class="com">&#x3C;!doctype html&#x3E;</span></pre>
+      <pre>&ensp;<span class="sudo">&#x3C;html lang=&#x22;en&#x22;&#x3E;</span></pre>
+      <pre>&ensp;&ensp;<span class="tag">&#x3C;head&#x3E;</span></pre>
+      <pre>&ensp;&ensp;&ensp;<span class="tag">&#x3C;meta</span> charset=<span class="sudo">&#x22;UTF-8&#x22;</span><span class="tag">&#x3E;</span></pre>
+      <pre>&ensp;&ensp;&ensp;<span class="tag">&#x3C;title&#x3E;</span>hello node<span class="tag">&#x3C;/title&#x3E;</span></pre>
+      <pre>&ensp;&ensp;<span class="tag">&#x3C;/head&#x3E;</span></pre>
+      <pre>&ensp;&ensp;<span class="tag">&#x3C;body&#x3E;</span></pre>
+      <pre>&ensp;&ensp;&ensp;<span class="tag">&#x3C;p&#x3E;</span>Hello world<span class="tag">&#x3C;/p&#x3E;</span></pre>
+      <pre>&ensp;&ensp;<span class="tag">&#x3C;/body&#x3E;</span></pre>
+      <pre>&ensp;<span class="sudo">&#x3C;/html&#x3E;</span></pre> 
       <pre>&ensp;`);</pre>
-      <pre>&ensp;response.end();</pre>
+      <pre>&ensp;<span class="ret">response</span>.<span class="ret">end</span>();</pre>
       <pre>});</pre>
-      <pre>server.listen(8080);</pre>
+      <pre><span class="ret">server</span>.<span class="fun">listen</span>(8080);</pre>
     </div>
     <p>Maintenant que votre serveur fonctionne et peut servir du HTML, il est temps d'apprendre comment échanger des informations avec ! Nous allons donc voir <a href="#socketio" class="btn">les WebSocket</a></p>
   </section>
