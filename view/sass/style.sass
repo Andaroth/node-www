@@ -37,6 +37,10 @@ $vpwidth: 800px
 *
   box-sizing: border-box
   font-family: $mainfont
+  &:focus, &:active
+    outline: 0
+  &::selection, *::-moz-selection
+    background-color: transparent
 body
   color: $dark
   margin: 0
