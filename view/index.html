@@ -292,6 +292,22 @@
       <pre>});</pre>
     </div>
     <p>L'inverse est aussi possible ou le client envoye un message , et le server écoute.</p>
+    <h2>Créer un chat avec socket.io</h2>
+    <p>Vous ne vous y attendiez pas ! Voici un exercice ! :D</p>
+    <p>Le but de cet exercice sera de creer un chat instantané trés simple qui devra:</p>
+    <ol>
+      <li>Prendre un pseudo et l'envoyer au server (pas de connexion ni mot de passe à gerer)(à gerer via socket.io aussi)</li>
+      <li>Dans la même page,afficher le chat</li>
+      <li>Envoyer et recevoir des message via socket.io</li>
+    </ol>
+    <h3>En bonus</h3>
+    <p>Toute les variables que vous déclarer dans l'évenement de connection( coté server ) resterons spécifique à chaque utilisateur.</p>
+    <div class="code">
+      <pre><span class="ret">io</span>.<span class="ret">on</span>(<span class="sudo">'connection'</span>, <span class="fun">function</span>(socket) {</pre>
+      <pre>&ensp;<span class="var">var</span> uneDonnéeParUtilisateur;</pre>
+      <pre>});</pre>
+    </div>
+    <p>Une fois que vous aurez estimé avoir atteint l'objectif de l'exercice, ou lorsque vous aurez assez pratiqué socket.io, il sera temps de passer au chapitre suivant sur <a href="#" class="btn">les événements</a></p>
   </section>
   <footer>
     <p>Cours créé par la Startup Lovelace à <a href="http://becode.org/">BeCode.org</a></p>
