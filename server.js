@@ -6,6 +6,7 @@ var serverinit = function() {
     var fs = require("fs"); // Pour charger un fichier chez le client
     // Some paths
     var viewPath = __dirname + "/view/";
+    var cssPath = viewPath + "css/";
     var appHomePath = ["/","/index.html","/index.htm","/index.php","/index","/home"]; // Liste des adresse pour laquelle on va renvoyer la page d'accueil
     var notFound = function(res) { // Je fais une fonction pour appeler la 404 sans me prendre la tête 
         console.log(">>> SEND '404' TO client");
@@ -20,7 +21,10 @@ var serverinit = function() {
     .get("/:pageRequest", function(req, res) { // Premier niveau
         var targetFile = viewPath + req.params.pageRequest;
         if (fs.existsSync(targetFile)) {
-            console.log(">>> SEND '" + targetFile + "' TO client");
+            if (/.css/i.test(targetFile)) 
+            {
+                console.log(">>> SEND '" + targetFile + "' TO client"); 
+            }
             res.sendFile(targetFile); 
         }
         else {

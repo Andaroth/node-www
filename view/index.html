@@ -11,12 +11,12 @@
   <h1><a id="toplink" href="#home"><span class="nomobile">Apprendre </span>NodeJS<span class="nomobile"> avec Lovelace</span></a></h1> 
   <nav>
     <ul class="menu">
-      <li><a class="chaplink" href="#installer"><span class="mobileonly">Comment installer </span>NodeJS<span class="hidden"> ?</span></a></li>
+      <li><a class="chaplink" href="#installer"><span class="mobileonly">Comment </span>Installer<span class="hidden"> NodeJS ?</span></a></li>
       <li><a class="chaplink" href="#npm"><span class="mobileonly">Apprendre à utiliser </span>NPM</a></li>
       <li><a href="#modules" class="chaplink"><span class="mobileonly">Que sont les </span>Modules<span class="mobileonly"> ?</span></a></li>
-      <!--<li><a class="chaplink" href="#express"><span class="hidden">Faire un serveur en </span>express</a></li>
-      <li><a class="chaplink" href="#socketio"><span class="hidden">Faire un chat avec </span>socket.io</a></li>
-      <li><a class="chaplink" href="#evenements"><span class="hidden">Que sont les </span>Événements<span class="hidden"> ?</span></a></li>-->
+      <li><a class="chaplink" href="#serveur"><span class="hidden">Faire un </span>Serveur</a><span class="hidden"> en Node</span></li>
+      <li><a class="chaplink" href="#socketio"><span class="hidden">Faites vtre chat avec </span>socket.io</a></li>
+      <!--<li><a class="chaplink" href="#evenements"><span class="hidden">Que sont les </span>Événements<span class="hidden"> ?</span></a></li>-->
     </ul>
   </nav>
   <section id="home" class="box">
@@ -64,7 +64,7 @@
     <h3 id="chap1p3">Mettre à jour NodeJS avec <b>NVM</b></h3>
     <p>Vous pouvez désormais installer la version actuelle de NodeJS à l'aide de <b>NVM</b> avec la petite ligne de terminal suivante:</p>
     <div class="code">
-      <pre><span class="sudo">sudo</span> <span class="npm">nvm</span> install current </pre>
+      <pre><span class="npm">nvm</span> install 9</pre>
     </div>
     <p>Quand c'est fait, le terminal devrait vous indiquer un message comme <br><cite>Now using node v9.2.0 (npm v5.5.1)</cite>.<br> Si c'est en effet le cas, félicitations, vous venez de finir ce chapitre avec succès !</p>
     <h3>Ensuite</h3>
@@ -184,7 +184,114 @@
         <pre>console.log(<span class="fun">Something</span>.Spanish()); <span class="com">// va nous logger Hola</span> </pre>
       </div>
       <p>Et voilà. <br>Pour plus d'info, n'hésitez pas à suivre <a href="https://www.youtube.com/watch?v=xHLd36QoS4k&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp&index=6">le cours de net ninja</a>, il est bien fait !</p>
-      
+      <p>Maintenant que nous savons comment faire fonctionner un serveur pour pouvoir mettre une page en ligne avec NodeJS, rendez-vous sur le chapitre sur <a href="#serveur" class="btn">la création de serveur</a></p>
+  </section>
+  <section id="serveur" class="box hidden">
+    <h2>Créer un serveur web avec Nodejs</h2>
+    <p>Dans ce chapitre, nous allons apprendre à créer notre propre serveur web grâce à bibliothèque node, afin de communiquer du contenu à notre navigateur via les modules et méthodes que node nous propose.</p>
+    <h3>Le module HTTP</h3>
+    <p>Pour commencer nous aurons besoin de créer un fichier nommé "server.js" et d'y inclure le module "http", qui nous donnera les outils nécessaires, pour communiquer avec le navigateur via le protocole HTTP (Hyper Text Transfer Protocol):</p>
+    <div class="code">
+      <pre><span class="var">var</span> http = <span class="fun">require</span>("http");</pre>
+    </div>
+    <h3>La méthode createServer</h3>
+    <p>Une fois le module "http" inclus dans notre fichier "server.js", nous aurons accès à la méthode "http.createServer()" qui comme son nom l'indique, nous permettra de créer notre serveur. Cette méthode va nous passer deux paramètres : les objets request et response:</p>
+    <div class="code">
+      <pre><span class="var">var</span> server = http.<span class="fun">createServer</span>(function(request, response) {</pre>
+      <pre>});</pre>
+    </div>
+    <h3>Les objets Request et Response</h3>
+    <p>L'objet "request" va nous fournir des informations concernant la requête client tel que son url, les en-têtes HTTP,... <br>Tandis que l'objet "response" servira à retourner des données comme du texte, du html, un fichier,...</p>
+    <p>Le but étant de communiquer du contenu à notre navigateur, ici seul l'objet "response" et quelques-unes de ces méthodes vont nous intéresser.</p>
+    <p>La première étape consistera à appeler la méthode "response.writeHead()" qui va définir le statut de notre requête http ainsi que le type de contenu que l'on souhaite retourner.</p>
+    <p>Ensuite "response.write()" va tout simplement, permettre de concevoir notre document html passé en arguement. <br>Et enfin "response.end()" viendra signifier la fin de notre réponse.</p>
+    <div class="code">
+      <pre>response.writeHead(200, {"Content-Type": "text/html"});</pre>
+      <pre>response.write(`</pre>
+      <pre>&ensp;&#x3C;!doctype html&#x3E;</pre>
+      <pre>&ensp;&#x3C;html lang=&#x22;en&#x22;&#x3E;</pre>
+      <pre>&ensp;&ensp;&#x3C;head&#x3E;</pre>
+      <pre>&ensp;&ensp;&ensp;&#x3C;meta charset=&#x22;UTF-8&#x22;&#x3E;</pre>
+      <pre>&ensp;&ensp;&ensp;&#x3C;title&#x3E;hello node&#x3C;/title&#x3E;</pre>
+      <pre>&ensp;&ensp;&#x3C;/head&#x3E;</pre>
+      <pre>&ensp;&ensp;&#x3C;body&#x3E;</pre>
+      <pre>&ensp;&ensp;&ensp;&#x3C;p&#x3E;Hello world&#x3C;/p&#x3E;</pre>
+      <pre>&ensp;&ensp;&#x3C;/body&#x3E;</pre>
+      <pre>&ensp;&#x3C;/html&#x3E;</pre>
+      <pre>`);</pre>
+      <pre>response.end();</pre>
+    </div>
+    <h3>La méthode listen</h3>
+    <p>La dernière méthode appelée dans notre fichier sera "server.listen()", qui va lier notre serveur au port de notre choix. Ici nous utilisons le port 8080 mais comme mentionné juste avant, libre à vous d'utiliser un autre port afin d'accéder à votre seveur web:</p>
+    <div class="code">
+      <pre><span class="ret">server</span>.<span class="ret">listen</span>(8080);</pre>
+    </div>
+    <p>Et voilà, Il ne nous reste plus qu'à démarrer notre serveur via le terminal grâce à ligne de commande ci-dessous et à admirer notre magnifique message "hello world" à l'adresse suivante: <a href="http://localhost:8080/">http://localhost:8080/</a></p>
+    <div class="code">
+      <pre><span class="npm">node</span> server.js</pre>
+    </div>
+    <p>Le code complet donne ceci :</p>
+    <div class="code">
+      <pre>var http = require("http");</pre>
+      <pre>var server = http.createServer(function (request, response) {</pre>
+      <pre>&ensp;response.writeHead(200, {"Content-Type": "text/html"});</pre>
+      <pre>&ensp;response.write(`</pre>
+      <pre>&ensp;&#x3C;!doctype html&#x3E;</pre>
+      <pre>&ensp;&#x3C;html lang=&#x22;en&#x22;&#x3E;</pre>
+      <pre>&ensp;&ensp;&#x3C;head&#x3E;</pre>
+      <pre>&ensp;&ensp;&ensp;&#x3C;meta charset=&#x22;UTF-8&#x22;&#x3E;</pre>
+      <pre>&ensp;&ensp;&ensp;&#x3C;title&#x3E;hello node&#x3C;/title&#x3E;</pre>
+      <pre>&ensp;&ensp;&#x3C;/head&#x3E;</pre>
+      <pre>&ensp;&ensp;&#x3C;body&#x3E;</pre>
+      <pre>&ensp;&ensp;&ensp;&#x3C;p&#x3E;Hello world&#x3C;/p&#x3E;</pre>
+      <pre>&ensp;&ensp;&#x3C;/body&#x3E;</pre>
+      <pre>&ensp;&#x3C;/html&#x3E;</pre> 
+      <pre>&ensp;`);</pre>
+      <pre>&ensp;response.end();</pre>
+      <pre>});</pre>
+      <pre>server.listen(8080);</pre>
+    </div>
+    <p>Maintenant que votre serveur fonctionne et peut servir du HTML, il est temps d'apprendre comment échanger des informations avec ! Nous allons donc voir <a href="#socketio" class="btn">les WebSocket</a></p>
+  </section>
+  <section id="socketio" class="box hidden">
+    <h3>Les WebSocket</h3>
+    <p>Les websockets c'est chouette !! Pourquoi me direz-vous? Parce que vous pouvez communiquer en temps réel entre la page web et node.Plus besoin de rafrachir la page pour afficher les nouvelles informations.</p>
+    <p>La même page peut envoyer des informations sans passer par un formulaire et recevoir des infromations en direct et tout ça en javascript !</p>
+    <p>Du côté serveur, pour gerer les websocket avec nodeJS vous aurez besoin d'installer le module <i>socket.io</i>  avec npm.</p>
+    <p>Du côté client, Pour communiquer avec les websockets , vous aurez besoin d'inclure la version client de socket.io sur vos pages web : </p>
+    <div class="code">
+      <pre><span class="npm">&#x3C;script</span> src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"><span class="npm">&#x3C;/script></span></pre>
+    </div>
+    <h3>Fonctionnement de base</h3>
+    <p>Pour initaliser socket io , il ne suffit pas de creer un objet,il faut aussi lui dire d'utiliser le server que vous aurez creer plus haut.</p>
+    <div class="code">
+      <pre><span class="var">var</span> io = <span class="fun">require</span>(<span class="sudo">'socket.io'</span>)(server);</pre>
+    </div>
+    <p>Avant d'utiliser socket.io,il faut que le server soit lié sur un port.</p>
+    <div class="code">
+      <pre><span class="ret">server</span>.<span class="ret">listen</span>(8080);</pre>
+    </div>
+    <p>La première chose à faire avant de recevoir ou envoyer des donner , c'est d'attendre que la connexion websocket soit établit avec la page web. Pour cela,il faudra attendre que l'évènement connection soit enclenché.</p>
+    <div class="code">
+      <pre>io.on('connection', <span class="fun">function</span>(socket) {</pre>
+      <pre>});</pre>
+    </div>
+    <p>Pour se connecter côté client :</p>
+    <div class="code">
+      <pre><span class="var">var</span> socket = io(<span class="sudo">'http://localhost'</span>);</pre>
+    </div>
+    <p>Messages pour communiquer socketio utiliser des evenements,on peut d'un coté écouter un événement et le l'autre envoyer des messages à ces événements. On peut creer autant de type d'évenement que l'on veut mais aussi décider de n'en écouter que certain d'entre eux.</p>
+    <p>Pour envoyer un evenement de type bienvenu au client par exemple (coté serveur):</p>
+    <div class="code">
+      <pre>socket.emit("bienvenue","Bonjour ceci est votre 1ere connection");</pre>
+    </div>
+    <p>Et pour le recevoir côté client :</p>
+    <div class="code">
+      <pre>socket.on('bienvenue', function (data) {</pre>
+      <pre>&ensp;<span class="fun">alert</span>(<span class="sudo">"le serveur nous dit :"</span>+data);</pre>
+      <pre>});</pre>
+    </div>
+    <p>L'inverse est aussi possible ou le client envoye un message , et le server écoute.</p>
   </section>
   <footer>
     <p>Cours créé par la Startup Lovelace à <a href="http://becode.org/">BeCode.org</a></p>
