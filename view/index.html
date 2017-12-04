@@ -14,9 +14,9 @@
       <li><a class="chaplink" href="#installer"><span class="mobileonly">Comment </span>Installer<span class="hidden"> NodeJS ?</span></a></li>
       <li><a class="chaplink" href="#npm"><span class="mobileonly">Apprendre à utiliser </span>NPM</a></li>
       <li><a href="#modules" class="chaplink"><span class="mobileonly">Que sont les </span>Modules<span class="mobileonly"> ?</span></a></li>
-      <li><a class="chaplink" href="#serveur"><span class="hidden">Faire un </span>Serveur</a><span class="hidden"> en Node</span></li>
-      <li><a class="chaplink" href="#socketio"><span class="hidden">Faites vtre chat avec </span>socket.io</a></li>
-      <!--<li><a class="chaplink" href="#evenements"><span class="hidden">Que sont les </span>Événements<span class="hidden"> ?</span></a></li>-->
+      <li><a class="chaplink" href="#serveur"><span class="mobileonly">Faire un </span>Serveur</a><span class="hidden"> en Node</span></li>
+      <li><a href="#events" class="chaplink"><span class="mobileonly">Jongler avec les </span>Événements</a></li>
+      <li><a class="chaplink" href="#socketio"><span class="mobileonly">Faites vtre chat avec </span>socket.io</a></li>
     </ul>
   </nav>
   <section id="home" class="box">
@@ -89,7 +89,7 @@
     <p>Même le serveur HTTP de ce site est fait en node et utilise plusieurs modules tels que <i>express</i> ou <i>ejs</i>. </p>
     <!--<h3 id="chap2p3">Comment s'en servir</h3>-->
     <h3>Initialiser un projet</h3>
-    <p>Quand on initialise un projet avec npm , celui ci créer un fichier package.json. Ce fichier contient non seulement le nom et la version du projet mais aussi, tout les modules utilisés par le projet.</p>
+    <p>Quand on initialise un projet avec <b>NPM</b>, celui ci créer un fichier package.json. Ce fichier contient non seulement le nom et la version du projet mais aussi, tout les modules utilisés par le projet.</p>
     <p>Cela vous servira à lister tout les modules dont vous avez besoin. Ce qui vous permettera de tous les réinstaller pas la suite en cas de besoin.</p>
     <p>Comme pour <b>NVM</b>, <b>NPM</b> s'utilise en lignes de commandes via le terminal. Pour initialiser un projet , faites donc la commande suivante :</p>
     <div class="code">
@@ -119,7 +119,7 @@
     <p>Cette commande de terminal va mettre à jour, dans cet exemple, le paquet <i>create-react-app</i>. Si l'on ne met rien, le gestionnaire va mettre à jour tous les paquets.</p>
     <p>Utilisez <i>-g</i> pour choisir de mettre à jour tous vos paquets. Enlevez-le si vous voulez juste mettre à jour ceux du projet.</p>
     <p>Dans tous les cas, <b>NPM</b> va trouver en ligne, dans une vaste base de donnée, tous les modules déjà créés auparavant par la communauté de NodeJS. Notez donc que sans connexion à Internet, vous ne pourrez pas faire fonctionner <b>NPM</b> correctement. </p>
-    <p>Le site <a href="npmjs.com">npmjs.com</a> est la source depuis laquelle npm télécharge tous les modules. Vous trouverez bien plus de renseignements sur <a href="https://docs.npmjs.com/">la documentation en ligne de npmjs.com</a>.</p>
+    <p>Le site <a href="npmjs.com">npmjs.com</a> est la source depuis laquelle <b>NPM</b>télécharge tous les modules. Vous trouverez bien plus de renseignements sur <a href="https://docs.npmjs.com/">la documentation en ligne de npmjs.com</a>.</p>
     <h3 id="chap2p4">Quels modules choisir pour son projet</h3>
     <p>C'est une question pertinente. C'est une bonne question... une excellente question... </p>
     <p>Comme très souvent dans la vie de développeur, je vais devoir vous répondre "ça dépend". <br>Ça dépend de votre projet, de vos besoins, des fonctionnalités que vous allez vouloir développer ou utiliser.</p>
@@ -183,6 +183,7 @@
         <pre>console.log(<span class="fun">Something</span>.English()); <span class="com">// va nous logger HELLO</span> </pre>
         <pre>console.log(<span class="fun">Something</span>.Spanish()); <span class="com">// va nous logger Hola</span> </pre>
       </div>
+      <h3>Ensuite</h3>
       <p>Et voilà. <br>Pour plus d'info, n'hésitez pas à suivre <a href="https://www.youtube.com/watch?v=xHLd36QoS4k&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp&index=6">le cours de net ninja</a>, il est bien fait !</p>
       <p>Maintenant que nous savons comment utiliser les outils de base, il convient d'apprendre à mettre une page en ligne avec NodeJS, rendez-vous sur le chapitre sur <a href="#serveur" class="btn">la création de serveur</a></p>
   </section>
@@ -207,8 +208,8 @@
     <p>Ensuite "response.write()" va tout simplement, permettre de concevoir notre document html passé en arguement. <br>Et enfin "response.end()" viendra signifier la fin de notre réponse.</p>
     <div class="code">
       <pre><span class="ret">response</span>.<span class="fun">writeHead</span>(200, {<span class="sudo">"Content-Type"</span>: <span class="sudo">"text/html"</span>});</pre>
-      <pre><span class="ret">response</span>.<span class="fun">write</span>(`</pre>
-      <pre><span class="com">&#x3C;!doctype html&#x3E;</span></pre>
+      <pre><span class="ret">response</span>.<span class="fun">write</span>(<span class="sudo">"</span></pre>
+      <pre><span class="com">&#x3C;!DOCTYPE html&#x3E;</span></pre>
       <pre><span class="sudo">&#x3C;html lang=&#x22;en&#x22;&#x3E;</span></pre>
       <pre>&ensp;<span class="tag">&#x3C;head&#x3E;</span></pre>
       <pre>&ensp;&ensp;<span class="tag">&#x3C;meta</span> charset=<span class="sudo">&#x22;UTF-8&#x22;</span><span class="tag">&#x3E;</span></pre>
@@ -218,7 +219,7 @@
       <pre>&ensp;&ensp;<span class="tag">&#x3C;p&#x3E;</span>Hello world<span class="tag">&#x3C;/p&#x3E;</span></pre>
       <pre>&ensp;<span class="tag">&#x3C;/body&#x3E;</span></pre>
       <pre><span class="sudo">&#x3C;/html&#x3E;</span></pre> 
-      <pre>`);</pre>
+      <pre><span class="sudo">"</span>);</pre>
       <pre><span class="ret">response</span>.<span class="ret">end</span>();</pre>
     </div>
     <h3>La méthode listen</h3>
@@ -226,6 +227,7 @@
     <div class="code">
       <pre><span class="ret">server</span>.<span class="ret">listen</span>(8080);</pre>
     </div>
+    <h3>Ensuite</h3>
     <p>Et voilà, Il ne nous reste plus qu'à démarrer notre serveur via le terminal grâce à ligne de commande ci-dessous et à admirer notre magnifique message "hello world" à l'adresse suivante: <a href="http://localhost:8080/">http://localhost:8080/</a></p>
     <div class="code">
       <pre><span class="npm">node</span> server.js</pre>
@@ -235,8 +237,8 @@
       <pre><span class="var">var</span> http = <span class="fun">require</span>(<span class="sudo">"http"</span>);</pre>
       <pre><span class="var">var</span> server = <span class="ret">http</span>.<span class="fun">createServer</span>(<span class="fun">function</span>(request, response) {</pre>
       <pre>&ensp;<span class="ret">response</span>.<span class="fun">writeHead</span>(200, {<span class="sudo">"Content-Type"</span>: <span class="sudo">"text/html"</span>});</pre>
-      <pre>&ensp;<span class="ret">response</span>.<span class="fun">write</span>(`</pre>
-      <pre>&ensp;<span class="com">&#x3C;!doctype html&#x3E;</span></pre>
+      <pre>&ensp;<span class="ret">response</span>.<span class="fun">write</span>(<span class="sudo">"</span></pre>
+      <pre>&ensp;<span class="com">&#x3C;!DOCTYPE html&#x3E;</span></pre>
       <pre>&ensp;<span class="sudo">&#x3C;html lang=&#x22;en&#x22;&#x3E;</span></pre>
       <pre>&ensp;&ensp;<span class="tag">&#x3C;head&#x3E;</span></pre>
       <pre>&ensp;&ensp;&ensp;<span class="tag">&#x3C;meta</span> charset=<span class="sudo">&#x22;UTF-8&#x22;</span><span class="tag">&#x3E;</span></pre>
@@ -246,18 +248,61 @@
       <pre>&ensp;&ensp;&ensp;<span class="tag">&#x3C;p&#x3E;</span>Hello world<span class="tag">&#x3C;/p&#x3E;</span></pre>
       <pre>&ensp;&ensp;<span class="tag">&#x3C;/body&#x3E;</span></pre>
       <pre>&ensp;<span class="sudo">&#x3C;/html&#x3E;</span></pre> 
-      <pre>&ensp;`);</pre>
+      <pre>&ensp;<span class="sudo">"</span>);</pre>
       <pre>&ensp;<span class="ret">response</span>.<span class="ret">end</span>();</pre>
       <pre>});</pre>
       <pre><span class="ret">server</span>.<span class="ret">listen</span>(8080);</pre>
     </div>
-    <p>Maintenant que votre serveur fonctionne et peut servir du HTML, il est temps d'apprendre comment échanger des informations avec ! Nous allons donc voir <a href="#socketio" class="btn">les WebSocket</a></p>
+    <h3>Ensuite</h3>
+    <p>Maintenant que votre serveur fonctionne et peut servir du HTML, il est temps d'apprendre comment échanger des informations avec ! Nous allons donc voir <a href="#events" class="btn">les événements</a></p>
+  </section>
+  <section id="events" class="box hidden">
+    <h3>Les Événements</h3>
+    <p>Votre serveur tourne désormais sur le port que vous avez choisi dans <i>listen</i>.</p>
+    <p>Il est temps de se pencher sur les événements. Vous vous rappelez de <i>addEventListener()</i> en JavaScript ? Cette sert à exécuter du script lorsqu'un événements déclencheur se produit.</p>
+    <p>En NodeJS, les événements fonctionnent un peu de la même manière, à la différence que les événements peuvent être créés, configurés et personnalisés vos besoin. </p>
+    <p>Voici les événements existant par défaut dans NodeJS :</p>
+    <div class="code">
+      <pre><span class="var">var</span> fs = <span class="fun">require</span>(<span class="sudo">'fs'</span>);</pre>
+      <pre><span class="var">var</span> rs = fs.<span class="fun">createReadStream</span>(<span class="sudo">'./fichier'</span>);</pre>
+      <pre><span class="ret">rs</span>.<span class="fun">on</span>(<span class="sudo">'open'</span>, <span class="fun">function</span>() {</pre>
+      <pre>&ensp;console.log(<span class="sudo">'Le fichier est maintenant ouvert!!!'</span>);</pre>
+      <pre>}); </pre>
+    </div>
+    <p>Regardons un peu de plus près ce bout de code...</p>
+    <p>En ligne 1 nous importons le module <i>fs</i>, et à la ligne 2, nous appelons la fonction <i>createReadStream()</i> de <i>fs</i> sur <i>rs</i>.</p>
+    <p>À la ligne 3, nous utilisons <i>rs</i> comme un objet pour y exécuter <i>on</i> avec en premier paramètre <i>open</i>. Ce <i>on</i> va nous permettre d'exécuter un script, une fonction. En l'occurence, le <i>console.log()</i> de la ligne 4 va s'éxécuter (sur <i>fs</i>) lorsque <i>'./fichier'</i> sera ouvert par l'utilisateur. </p>
+    <h3>Créer ses propres événements</h3>
+    <p>Nous venons de voir rapidement comment cela fonctionne. Maintenant, comme je vous l'ai dit, voyons comment nous pouvons créer nos propres événements pour pouvoir éxécuter toutes les tâches que l'on veut sur n'importe-quel événement. </p>
+    <p>Notez que pour cela, il vous faudra importer le module <i>events</i> pour que cela fonctionne. Si vous avez oubléi comment on fait, voici la commande terminale adéquate :</p>
+    <div class="code">
+      <pre><span class="npm">npm</span> install <i>events</i></pre>
+    </div>
+    <p>Et ensuite, voici la syntaxe juste :</p>
+    <div class="code"> 
+      <pre><span class="var">var</span> events = <span class="fun">require</span>(<span class="sudo">'events'</span>);</pre>
+      <pre><span class="var">var</span> eventEmitter = new <span class="ret">events</span>.<span class="fun">EventEmitter</span>(); </pre>
+      <pre><span class="com">// Creation de l'évenement</span></pre>
+      <pre><span class="var">var</span> myEvent = <span class="fun">function</span>() {</pre>
+      <pre>&ensp;console.log(<span class="sudo">'Vive le terminal'</span>);</pre>
+      <pre>}</pre>
+      <pre><span class="com">// Application de l'événement à un cas</span></pre>
+      <pre><span class="ret">eventEmitter</span>.<span class="fun">on</span>(<span class="sudo">'terminal'</span>, myEvent);</pre>
+      <pre><span class="com">// Lance l'évenement "aimeTerminal"</span></pre>
+      <pre><span class="ret">eventEmitter</span>.<span class="fun">emit</span>(<span class="sudo">'terminal'</span>);</pre>
+    </div>
+    <p>Comme vous le voyez, en ligne 1 nous avons importé le module <i>events</i> dans notre script. À la ligne suivante, nous avons créé un objet <i>eventEmitter</i> qui permettra de faire fonctionner nos événements.</p>
+    <p>À la ligne 8, nous lançons la fonction <i>myEvent()</i> lorsque l'objet <i>eventEmitter</i> reçoit le signal <i>'terminal'</i>. L'objet écoute, ou attend, de recevoir ce signal. <br>C'est à la ligne 10 que nous avons exécuté la fonction <i>emit</i> sur notre objet. <br>C'est alors à la ligne 10 que s'exécuter le <i>on</i> que nous avons écrit en ligne 8. </p>
+    <p>L'intérêt de <i>emit</i> est qu'il peut s'éxécuter quand vous le désirez: à l'appui d'une touche, sur un lien, sur un bouton, etc... </p>
+    <h3>Ensuite</h3>
+    <p>C'est tout ce qu'il y a à retenir sur les événements. À partir de juste ça, vous devrez pouvoir chipoter un bon moment pour créer des applications très intéressantes. Je vous invite tout de même à faire un grand tour sur le <a href="https://nodejs.org/api/events.html">chapitre des événements de la documentation NodeJS</a> pour approfondir vos connaissances sur le sujet.</p>
+    <p>Une fois que vous êtes prêt, embarquez avec nous dans <a href="#socketio" class="btn">le chapitre sur les websocket</a></p>
   </section>
   <section id="socketio" class="box hidden">
     <h3>Les WebSocket</h3>
     <p>Les websockets c'est chouette !! Pourquoi me direz-vous? Parce que vous pouvez communiquer en temps réel entre la page web et node.Plus besoin de rafrachir la page pour afficher les nouvelles informations.</p>
     <p>La même page peut envoyer des informations sans passer par un formulaire et recevoir des infromations en direct et tout ça en javascript !</p>
-    <p>Du côté serveur, pour gerer les websocket avec nodeJS vous aurez besoin d'installer le module <i>socket.io</i>  avec npm.</p>
+    <p>Du côté serveur, pour gerer les websocket avec nodeJS vous aurez besoin d'installer le module <i>socket.io</i>  avec <b>NPM</b>.</p>
     <p>Du côté client, Pour communiquer avec les websockets , vous aurez besoin d'inclure la version client de socket.io sur vos pages web : </p>
     <div class="code">
       <pre><span class="npm">&#x3C;script</span> src=<span class="sudo">"https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"</span><span class="tag">></span><span class="npm">&#x3C;/script></span></pre>
@@ -307,7 +352,8 @@
       <pre>&ensp;<span class="var">var</span> uneDonnéeParUtilisateur;</pre>
       <pre>});</pre>
     </div>
-    <p>Une fois que vous aurez estimé avoir atteint l'objectif de l'exercice, ou lorsque vous aurez assez pratiqué socket.io, il sera temps de passer au chapitre suivant sur <a href="#" class="btn">les événements</a></p>
+    <h3>Ensuite</h3>
+    <p>Ce que vous venez d'apprendre durant ce chapitre fonctionne avec ce que l'on appelle des événements. </p>
   </section>
   <footer>
     <p>Cours créé par la Startup Lovelace à <a href="http://becode.org/">BeCode.org</a></p>
