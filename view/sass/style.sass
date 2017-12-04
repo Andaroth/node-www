@@ -32,6 +32,7 @@ $vpwidth: 800px
   height: $codeheight
   line-height: $codeheight
   font-family: "Lucida Console", "Lucida Grande", monospace, sans-serif
+  font-size: inherit
 // style
 *
   box-sizing: border-box
@@ -123,6 +124,8 @@ h1
     margin: 0
     white-space: nowrap
     @include codecomput
+    span
+      @include codecomput
     &:before
       display: block
       float: left
