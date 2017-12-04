@@ -132,8 +132,8 @@
       <p>Par définition, un module est un fichier contenant plusieurs codes (variables, fonctions, objets, classes etc.) pouvant être appelés dans un autre fichier. Pensez un peu à vos links css ou vos scripts JS sur vos fichiers html, est bien c’est presque pareil ! Mais attention, je dis presque... <br>Comment cela fonctionne  ?</p>
       <p>Tout d’abord, il nous faut créer une page « app.js » sur laquelle écrire votre code</p>
       <div class="code">
-        <pre><span class="var">var</span> <span class="fun"><span class="fun">sayHelloInEnglish</span></span> = function() { </pre>
-        <pre>&ensp;<span class="ret">return</span> "HELLO"; </pre>
+        <pre><span class="var">var</span> <span class="fun"><span class="fun">sayHelloInEnglish</span></span> = <span class="fun">function</span>() { </pre>
+        <pre>&ensp;<span class="ret">return</span> <span class="sudo">"HELLO"</span>; </pre>
         <pre>} </pre>
       </div>
       <p>Une fois cela fait, il faut expliquer à l’ordinateur que nous voulons exporter cet élément pour l’utiliser sur une autre page JS, que nous allons appeler ici « use.js »</p>
@@ -144,7 +144,7 @@
       </div>
       <p>Dans cet exemple, nous aurons ceci :</p>
       <div class="code">
-        <pre><span class="var">var</span> <span class="fun"><span class="fun">sayHelloInEnglish</span></span> = function() { </pre>
+        <pre><span class="var">var</span> <span class="fun"><span class="fun">sayHelloInEnglish</span></span> = <span class="fun">function</span>() { </pre>
         <pre>&ensp;<span class="ret">return</span> "HELLO"; </pre>
         <pre>} </pre>
         <pre><span class="ret">module</span>.<span class="ret">exports</span>.English= <span class="fun">sayHelloInEnglish</span>; </pre>
@@ -153,25 +153,25 @@
       <p>Maintenant que le module est exporté, il faut l’importer dans use.js. pour ce faire, il suffit d’utiliser la méthode « require » dans le fichier use.js qui va aller chercher votre module et le rendre utilisable.</p>
       <p>Voici son mode d’emploi, premièrement la méthode doit être appelée dans une variable afin de pouvoir l’utiliser :</p>
       <div class="code">
-        <pre><span class="var">var</span> <span class="fun">Something</span>= require(); </pre>
+        <pre><span class="var">var</span> <span class="fun">Something</span>= <span class="fun">require</span>(); </pre>
       </div>
       <p>Puis il faut indiquer la position du module à la méthode require, tout comme le href dans un link css :</p>
       <div class="code">
-        <pre><span class="var">var</span> <span class="fun">Something</span>= require(<span class="sudo">"app.js"</span>); </pre>
+        <pre><span class="var">var</span> <span class="fun">Something</span>= <span class="fun">require</span>(<span class="sudo">"app.js"</span>); </pre>
       </div>
       <p>Et voilà, votre fonction est importée, maintenant pour l’utiliser il vous suffit de l’appeler sous le nom de votre require plus le nom que vous avez donné à votre export (dans notre cas le <span class="fun">Something</span> et le English).</p>
       <p>Dans notre exemple :</p>
       <div class="code">
-        <pre><span class="var">var</span> <span class="fun">Something</span>= require(<span class="sudo">"app.js"</span>); </pre>
+        <pre><span class="var">var</span> <span class="fun">Something</span>= <span class="fun">require</span>(<span class="sudo">"app.js"</span>); </pre>
         <pre>console.log(<span class="fun">Something</span>.English()); <span class="com">// va nous logger HELLO</span> </pre>
       </div>
       <p><b>Pourquoi devoir donner un nom à notre export ?</b></p>
       <p>Très souvent dans des modules, il n’y a pas qu’un seul élément, il faut donc donner un nom à nos différents éléments pour pouvoir les utiliser, par exemple :</p>
       <div class="code">
-        <pre><span class="var">var</span> <span class="fun">sayHelloInEnglish</span>= function() { </pre>
+        <pre><span class="var">var</span> <span class="fun">sayHelloInEnglish</span>= <span class="fun">function</span>() { </pre>
         <pre>&ensp;<span class="ret">return</span> "HELLO"; </pre>
         <pre>} </pre>
-        <pre><span class="var">var</span> <span class="fun">sayHelloInSpanish</span>= function() { </pre>
+        <pre><span class="var">var</span> <span class="fun">sayHelloInSpanish</span>= <span class="fun">function</span>() { </pre>
         <pre>&ensp;<span class="ret">return</span> "Hola"; </pre>
         <pre>} </pre>
         <pre><span class="ret">module</span>.<span class="ret">exports</span>.English= <span class="fun">sayHelloInEnglish</span>; </pre>
@@ -179,7 +179,7 @@
       </div>
       <p>Nous avons maintenant deux fonctions dans un seul module, toutes les deux importables et utilisables sous un seul et même require.</p>
       <div class="code">
-        <pre><span class="var">var</span> <span class="fun">Something</span>= require(<span class="sudo">"app.js"</span>); </pre>
+        <pre><span class="var">var</span> <span class="fun">Something</span>= <span class="fun">require</span>(<span class="sudo">"app.js"</span>); </pre>
         <pre>console.log(<span class="fun">Something</span>.English()); <span class="com">// va nous logger HELLO</span> </pre>
         <pre>console.log(<span class="fun">Something</span>.Spanish()); <span class="com">// va nous logger Hola</span> </pre>
       </div>
@@ -192,12 +192,12 @@
     <h3>Le module HTTP</h3>
     <p>Pour commencer nous aurons besoin de créer un fichier nommé "server.js" et d'y inclure le module "http", qui nous donnera les outils nécessaires, pour communiquer avec le navigateur via le protocole HTTP (Hyper Text Transfer Protocol):</p>
     <div class="code">
-      <pre><span class="var">var</span> http = <span class="fun">require</span>("http");</pre>
+      <pre><span class="var">var</span> http = <span class="fun">require</span>(<span class="sudo">"http"</span>);</pre>
     </div>
     <h3>La méthode createServer</h3>
-    <p>Une fois le module "http" inclus dans notre fichier "server.js", nous aurons accès à la méthode "http.createServer()" qui comme son nom l'indique, nous permettra de créer notre serveur. Cette méthode va nous passer deux paramètres : les objets request et response:</p>
+    <p>Une fois le module "http" inclus dans notre fichier "server.js", nous aurons accès à la méthode "<span class="ret">http</span>.<span class="fun">createServer</span>()" qui comme son nom l'indique, nous permettra de créer notre serveur. Cette méthode va nous passer deux paramètres : les objets request et response:</p>
     <div class="code">
-      <pre><span class="var">var</span> server = http.<span class="fun">createServer</span>(function(request, response) {</pre>
+      <pre><span class="var">var</span> server = <span class="ret">http</span>.<span class="fun">createServer</span>(<span class="fun">function</span>(request, response) {</pre>
       <pre>});</pre>
     </div>
     <h3>Les objets Request et Response</h3>
@@ -206,7 +206,7 @@
     <p>La première étape consistera à appeler la méthode "response.writeHead()" qui va définir le statut de notre requête http ainsi que le type de contenu que l'on souhaite retourner.</p>
     <p>Ensuite "response.write()" va tout simplement, permettre de concevoir notre document html passé en arguement. <br>Et enfin "response.end()" viendra signifier la fin de notre réponse.</p>
     <div class="code">
-      <pre><span class="ret">response</span>.<span class="fun">writeHead</span>(200, {"Content-Type": "text/html"});</pre>
+      <pre><span class="ret">response</span>.<span class="fun">writeHead</span>(200, {<span class="sudo">"Content-Type"</span>: <span class="sudo">"text/html"</span>});</pre>
       <pre><span class="ret">response</span>.<span class="fun">write</span>(`</pre>
       <pre><span class="com">&#x3C;!doctype html&#x3E;</span></pre>
       <pre><span class="sudo">&#x3C;html lang=&#x22;en&#x22;&#x3E;</span></pre>
@@ -232,9 +232,9 @@
     </div>
     <p>Le code complet donne ceci :</p>
     <div class="code">
-      <pre><span class="var">var</span> http = <span class="fun">require</span>("http");</pre>
-      <pre><span class="var">var</span> server = http.<span class="fun">createServer</span>(function (request, response) {</pre>
-      <pre>&ensp;<span class="ret">response</span>.<span class="fun">writeHead</span>(200, {"Content-Type": "text/html"});</pre>
+      <pre><span class="var">var</span> http = <span class="fun">require</span>(<span class="sudo">"http"</span>);</pre>
+      <pre><span class="var">var</span> server = <span class="ret">http</span>.<span class="fun">createServer</span>(<span class="fun">function</span>(request, response) {</pre>
+      <pre>&ensp;<span class="ret">response</span>.<span class="fun">writeHead</span>(200, {<span class="sudo">"Content-Type"</span>: <span class="sudo">"text/html"</span>});</pre>
       <pre>&ensp;<span class="ret">response</span>.<span class="fun">write</span>(`</pre>
       <pre>&ensp;<span class="com">&#x3C;!doctype html&#x3E;</span></pre>
       <pre>&ensp;<span class="sudo">&#x3C;html lang=&#x22;en&#x22;&#x3E;</span></pre>
@@ -260,7 +260,7 @@
     <p>Du côté serveur, pour gerer les websocket avec nodeJS vous aurez besoin d'installer le module <i>socket.io</i>  avec npm.</p>
     <p>Du côté client, Pour communiquer avec les websockets , vous aurez besoin d'inclure la version client de socket.io sur vos pages web : </p>
     <div class="code">
-      <pre><span class="npm">&#x3C;script</span> src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"><span class="npm">&#x3C;/script></span></pre>
+      <pre><span class="npm">&#x3C;script</span> src=<span class="sudo">"https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"</span><span class="tag">></span><span class="npm">&#x3C;/script></span></pre>
     </div>
     <h3>Fonctionnement de base</h3>
     <p>Pour initaliser socket io , il ne suffit pas de creer un objet,il faut aussi lui dire d'utiliser le server que vous aurez creer plus haut.</p>
@@ -273,21 +273,21 @@
     </div>
     <p>La première chose à faire avant de recevoir ou envoyer des donner , c'est d'attendre que la connexion websocket soit établit avec la page web. Pour cela,il faudra attendre que l'évènement connection soit enclenché.</p>
     <div class="code">
-      <pre>io.on('connection', <span class="fun">function</span>(socket) {</pre>
+      <pre><span class="ret">io</span>.<span class="ret">on</span>(<span class="sudo">'connection'</span>, <span class="fun">function</span>(socket) {</pre>
       <pre>});</pre>
     </div>
     <p>Pour se connecter côté client :</p>
     <div class="code">
-      <pre><span class="var">var</span> socket = io(<span class="sudo">'http://localhost'</span>);</pre>
+      <pre><span class="var">var</span> socket = <span class="fun">io</span>(<span class="sudo">'http://localhost'</span>);</pre>
     </div>
     <p>Messages pour communiquer socketio utiliser des evenements,on peut d'un coté écouter un événement et le l'autre envoyer des messages à ces événements. On peut creer autant de type d'évenement que l'on veut mais aussi décider de n'en écouter que certain d'entre eux.</p>
     <p>Pour envoyer un evenement de type bienvenu au client par exemple (coté serveur):</p>
     <div class="code">
-      <pre><span class="ret">socket</span>.<span class="ret">emit</span>("bienvenue","Bonjour ceci est votre 1ere connection");</pre>
+      <pre><span class="ret">socket</span>.<span class="ret">emit</span>(<span class="sudo">"bienvenue"</span>,<span class="sudo">"Bonjour ceci est votre 1ere connection"</span>);</pre>
     </div>
     <p>Et pour le recevoir côté client :</p>
     <div class="code">
-      <pre>socket.on('bienvenue', function (data) {</pre>
+      <pre><span class="ret">socket</span>.<span class="ret">on</span>(<span class="sudo">'bienvenue'</span>, <span class="fun">function</span>(data) {</pre>
       <pre>&ensp;<span class="fun">alert</span>(<span class="sudo">"le serveur nous dit :"</span>+data);</pre>
       <pre>});</pre>
     </div>
