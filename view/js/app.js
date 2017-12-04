@@ -1,4 +1,8 @@
 $("document").ready(function() {
+  $(".openmenu").click(function(e){
+    e.preventDefault();
+    $("#menu").toggleClass("mobilehidden");
+  })
   $("#toplink,.chaplink,.btn").click(function(e){
     e.preventDefault();
     $(".box").addClass("hidden");
