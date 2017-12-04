@@ -249,7 +249,7 @@
       <pre>&ensp;`);</pre>
       <pre>&ensp;<span class="ret">response</span>.<span class="ret">end</span>();</pre>
       <pre>});</pre>
-      <pre><span class="ret">server</span>.<span class="fun">listen</span>(8080);</pre>
+      <pre><span class="ret">server</span>.<span class="ret">listen</span>(8080);</pre>
     </div>
     <p>Maintenant que votre serveur fonctionne et peut servir du HTML, il est temps d'apprendre comment échanger des informations avec ! Nous allons donc voir <a href="#socketio" class="btn">les WebSocket</a></p>
   </section>
@@ -283,7 +283,7 @@
     <p>Messages pour communiquer socketio utiliser des evenements,on peut d'un coté écouter un événement et le l'autre envoyer des messages à ces événements. On peut creer autant de type d'évenement que l'on veut mais aussi décider de n'en écouter que certain d'entre eux.</p>
     <p>Pour envoyer un evenement de type bienvenu au client par exemple (coté serveur):</p>
     <div class="code">
-      <pre>socket.emit("bienvenue","Bonjour ceci est votre 1ere connection");</pre>
+      <pre><span class="ret">socket</span>.<span class="ret">emit</span>("bienvenue","Bonjour ceci est votre 1ere connection");</pre>
     </div>
     <p>Et pour le recevoir côté client :</p>
     <div class="code">
