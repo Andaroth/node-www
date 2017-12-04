@@ -271,7 +271,7 @@
     </div>
     <p>Regardons un peu de plus près ce bout de code...</p>
     <p>En ligne 1 nous importons le module <i>fs</i>, et à la ligne 2, nous appelons la fonction <i>createReadStream()</i> de <i>fs</i> sur <i>rs</i>.</p>
-    <p>À la ligne 3, nous utilisons <i>rs</i> comme un objet pour y exécuter <i>on</i> avec en premier paramètre <i>open</i>. Ce <i>on</i> va nous permettre d'exécuter un script, une fonction. En l'occurence, le <i>console.log()</i> de la ligne 4 va s'éxécuter (sur <i>fs</i>) lorsque <i>'./fichier'</i> sera ouvert par l'utilisateur. </p>
+    <p>À la ligne 3, nous utilisons <i>rs</i> comme un objet pour y exécuter <i>on</i> avec en premier paramètre <i>open</i>. Ce <i>on</i> va nous permettre d'exécuter un script, une fonction. En l'occurence, le <i>console.log()</i> de la ligne 4 va s'éxécuter (sur <i>rs</i>) lorsque <i>'./fichier'</i> sera ouvert par l'utilisateur. </p>
     <h3>Créer ses propres événements</h3>
     <p>Nous venons de voir rapidement comment cela fonctionne. Maintenant, comme je vous l'ai dit, voyons comment nous pouvons créer nos propres événements pour pouvoir éxécuter toutes les tâches que l'on veut sur n'importe-quel événement. </p>
     <p>Notez que pour cela, il vous faudra importer le module <i>events</i> pour que cela fonctionne. Si vous avez oubléi comment on fait, voici la commande terminale adéquate :</p>
