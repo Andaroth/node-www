@@ -12,10 +12,10 @@
   <nav>
     <a href="#menu" class="openmenu mobileonly">Menu</a>
     <ul id="menu" class="menu mobilehidden">
-      <li><a class="chaplink" href="#installer"><span class="mobileonly">Comment </span>Installer<span class="hidden"> NodeJS ?</span></a></li>
+      <li><a class="chaplink" href="#installer"><span class="mobileonly">Comment </span>Installer<span class="mobileonly"> NodeJS ?</span></a></li>
       <li><a class="chaplink" href="#npm"><span class="mobileonly">Apprendre à utiliser </span>NPM</a></li>
       <li><a href="#modules" class="chaplink"><span class="mobileonly">Que sont les </span>Modules<span class="mobileonly"> ?</span></a></li>
-      <li><a class="chaplink" href="#serveur"><span class="mobileonly">Faire un </span>Serveur</a><span class="hidden"> en Node</span></li>
+      <li><a class="chaplink" href="#serveur"><span class="mobileonly">Faire un </span>Serveur<span class="mobileonly"> en Node</span></a></li>
       <li><a href="#events" class="chaplink"><span class="mobileonly">Jongler avec les </span>Événements</a></li>
       <li><a class="chaplink" href="#socketio"><span class="mobileonly">Faites votre chat avec </span>socket.io</a></li>
     </ul>
@@ -26,6 +26,15 @@
     <h3>Qu'est-ce que NodeJS</h3>
     <p>Il s'agit d'un framework en JavaScript. En gros, cela va vous permettre de créer des serveurs et des applications en n'utiliquant que du JavaScript. </p>
     <p>L'avantage de Node est de n'utiliser qu'un seul langage unificateur pour tous les morceaux de votre projet, plutôt que de jongler entre différents langages tels que le PHP, le Java, le XML, etc... </p>
+    <h3>Les chapitres</h3>
+    <ol>
+      <li><a class="chaplink" href="#installer">Comment Installer NodeJS ?</a></li>
+      <li><a class="chaplink" href="#npm">Apprendre à utiliser NPM</a></li>
+      <li><a href="#modules" class="chaplink">Que sont les Modules ?</a></li>
+      <li><a class="chaplink" href="#serveur">Faire un Serveur en Node</a></li>
+      <li><a href="#events" class="chaplink">Jongler avec les Événements</a></li>
+      <li><a class="chaplink" href="#socketio">Faites votre chat avec socket.io</a></li>
+    </ol>
     <h3>Le but de ce micro-site</h3>
     <p>Je vais tenter de vous montrer comment installer la dernière version de NodeJS sur votre machine et comment vous en servir à travers plusieurs chapitres faciles à comprendre. <br>Vous trouverez la liste de ces chapitres dans le menu de ce site moche.</p>
     <p>Vous pouvez passer au premier chapitre de ce cours en vous rendant sur <a class="btn chaplink" href="#installer">le chapitre d'installation</a></p>
@@ -35,12 +44,6 @@
     <p>Bienvenue dans le premier chapitre de Node.</p>
     <p>Nous allons voir comment installer NodeJS et le mettre à jour à sa dernière version. Cela vous permettra d'utiliser le gestionnaire de package <b>NPM</b> pour installer des modules indispensables tels que <i>express</i> ou <i>socket.io</i> !</p>
     <p>Au cours de ce chapitre, nous allons également installer <b>NVM</b>, qui vous permettra de changer à volonté de version de NodeJS.</p>
-    <!--<ol>
-      <li><a href="#chap1p1">Télécharger NodeJS</a></li>
-      <li><a href="#chap1p1a">Installation en ligne de commandes</a></li>
-      <li><a href="#chap1p2">Télécharger <b>NVM</b></a></li>
-      <li><a href="#chap1p3">Mettre à jour</a></li>
-    </ol>-->
     <h3 id="chap1p1">Télécharger NodeJS</h3>
     <p>
       Pour commencer, pas de surprise: vous devez installer NodeJS sur votre machine, et donc le télécharger. </p>
@@ -76,14 +79,6 @@
   <section id="npm" class="box hidden">
     <h2>Utiliser <b>NPM</b></h2>
     <p>Ce chapitre va vous expliquer brièvement à quoi sert <b>NPM</b> et ce que sont les modules/packages que l'on peut installer dans un projet à l'aide de cet outil. </p>
-    <!--<p>Le chapitre se découpe en ces quelques parties :</p>
-    <ol>
-      <li><a href="#chap2p1">Qu'est-ce que <b>NPM</b></a></li>
-      <li><a href="#chap2p2">Pourquoi s'en servir</a></li>
-      <li><a href="#chap2p3">Comment s'en servir</a></li>
-      <li><a href="#chap2p4">Quels modules utiliser</a></li>
-    </ol>-->
-    <!--<h3 id="chap2p1">Qu'est-ce que <b>NPM</b></h3>-->
     <p><b>NPM</b> (on l'a beaucoup lu en à peine 15 secondes, c'est chaud) signifie <strong>Node Package Manager</strong>. <br>Ce petit outil, néanmoins très complet, va nous permettre d'installer des packages ou des modules dans NodeJS ou plus spécifiquement dans nos projets.</p>
     <h3 id="chap2p2">Pourquoi s'en servir</h3>
     <p>Les modules vont vous permettre de créer des applications rapidement, sans devoir réinventer systématiquement la roue. Ils sont incontournables dans 99,99% des projets en NodeJS de nos jours. </p>
@@ -124,7 +119,6 @@
     <h3 id="chap2p4">Quels modules choisir pour son projet</h3>
     <p>C'est une question pertinente. C'est une bonne question... une excellente question... </p>
     <p>Comme très souvent dans la vie de développeur, je vais devoir vous répondre "ça dépend". <br>Ça dépend de votre projet, de vos besoins, des fonctionnalités que vous allez vouloir développer ou utiliser.</p>
-    <!--<p>Je ne suis ni Akinator ni Irma, alors je vais plutôt vous introduire à deux incontournables du milieu dans les chapitres suivants : <cite>express</cite> et <cite>socket.io</cite>. Nous verrons ensemble à quoi ils servent et nous développerons ensemble une application concrète pour chacun. <br>Si vous n'avez pas peur des tutoriels écrits (c'est pas Grafikart, désolé Tranbé), alors il est grand temps de vous rendre sur le chapitre qui vous montrera comment <a href="#express" class="btn">utiliser express</a></p>-->
     <p>Avant de pouvoir commencer à utiliser les modules, il est très important de comprendre totalement ce qu'ils sont. Rendez-vous tout de suite sur le <a href="#modules" class="btn">Chapitre sur les modules</a> </p>
   </section>
   <section id="modules" class="box hidden">
