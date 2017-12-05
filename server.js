@@ -51,3 +51,4 @@ var serverinit = function() {
 }; // var init
 
 serverinit(); // Lancer le serveur
+/* Pour BeCode par Axel Fiolle */

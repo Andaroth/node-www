@@ -58,6 +58,7 @@ var chatServer = function() {
     .use(function(req, res, next){ // index
         res.sendFile(__dirname + "/view/chat.html");
     }); // index
-    server.listen(3000); // Le server listen le port 3000
+    server.listen(3000); // Le serveur listen le port 3000
 } // chatServer() function
 chatServer(); // exec function
+/* Pour BeCode par Axel Fiolle */

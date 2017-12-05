@@ -19,3 +19,4 @@ $("document").ready(function() {
     $("#home").addClass("hidden");
   }
 });
+/* Pour BeCode par Axel Fiolle */
