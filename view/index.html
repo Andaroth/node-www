@@ -140,13 +140,13 @@
     <h2>Les modules</h2>
       <p>Et voilà, encore un nouveau terme insensé et une nouvelle chose à apprendre… pas vraiment en fait .</p>
       <p>Par définition, un module est un fichier contenant plusieurs codes (variables, fonctions, objets, classes etc.) pouvant être appelés dans un autre fichier. Pensez un peu à vos links css ou vos scripts JS sur vos fichiers html, est bien c’est presque pareil ! Mais attention, je dis presque... <br>Comment cela fonctionne  ?</p>
-      <p>Tout d’abord, il nous faut créer une page « app.js » sur laquelle écrire votre code</p>
+      <p>Tout d’abord, il nous faut créer une page "app.js" sur laquelle écrire votre code</p>
       <div class="code">
         <pre><span class="var">var</span> <span class="fun"><span class="fun">sayHelloInEnglish</span></span> = <span class="fun">function</span>() { </pre>
         <pre>&ensp;<span class="ret">return</span> <span class="sudo">"HELLO"</span>; </pre>
         <pre>} </pre>
       </div>
-      <p>Une fois cela fait, il faut expliquer à l’ordinateur que nous voulons exporter cet élément pour l’utiliser sur une autre page JS, que nous allons appeler ici « use.js »</p>
+      <p>Une fois cela fait, il faut expliquer à l’ordinateur que nous voulons exporter cet élément pour l’utiliser sur une autre page JS, que nous allons appeler ici "  use.js "</p>
       <h3>L'export</h3>
       <p>Ici, rien de plus simple, à la fin de votre code, ajoutez :</p>
       <div class="code">
@@ -160,7 +160,7 @@
         <pre><span class="ret">module</span>.<span class="ret">exports</span>.English= <span class="fun">sayHelloInEnglish</span>; </pre>
       </div>
       <h3>Require</h3>
-      <p>Maintenant que le module est exporté, il faut l’importer dans use.js. pour ce faire, il suffit d’utiliser la méthode « require » dans le fichier use.js qui va aller chercher votre module et le rendre utilisable.</p>
+      <p>Maintenant que le module est exporté, il faut l’importer dans use.js. pour ce faire, il suffit d’utiliser la méthode "  require " dans le fichier use.js qui va aller chercher votre module et le rendre utilisable.</p>
       <p>Voici son mode d’emploi, premièrement la méthode doit être appelée dans une variable afin de pouvoir l’utiliser :</p>
       <div class="code">
         <pre><span class="var">var</span> <span class="fun">Something</span>= <span class="fun">require</span>(); </pre>
