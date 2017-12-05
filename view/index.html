@@ -172,7 +172,7 @@
       <p>Et voilà, votre fonction est importée, maintenant pour l’utiliser il vous suffit de l’appeler sous le nom de votre require plus le nom que vous avez donné à votre export (dans notre cas le <span class="fun">Something</span> et le English).</p>
       <p>Dans notre exemple :</p>
       <div class="code">
-        <pre><span class="var">var</span> <span class="fun">Something</span>= <span class="fun">require</span>(<span class="sudo">"app.js"</span>); </pre>
+        <pre><span class="var">var</span> <span class="fun">Something</span>= <span class="fun">require</span>(<span class="sudo">"./app.js"</span>); </pre>
         <pre>console.log(<span class="fun">Something</span>.English()); <span class="com">// va nous logger HELLO</span> </pre>
       </div>
       <p><b>Pourquoi devoir donner un nom à notre export ?</b></p>
@@ -189,7 +189,7 @@
       </div>
       <p>Nous avons maintenant deux fonctions dans un seul module, toutes les deux importables et utilisables sous un seul et même require.</p>
       <div class="code">
-        <pre><span class="var">var</span> <span class="fun">Something</span>= <span class="fun">require</span>(<span class="sudo">"app.js"</span>); </pre>
+        <pre><span class="var">var</span> <span class="fun">Something</span>= <span class="fun">require</span>(<span class="sudo">"./app.js"</span>); </pre>
         <pre>console.log(<span class="fun">Something</span>.English()); <span class="com">// va nous logger HELLO</span> </pre>
         <pre>console.log(<span class="fun">Something</span>.Spanish()); <span class="com">// va nous logger Hola</span> </pre>
       </div>
