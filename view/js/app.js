@@ -1,5 +1,9 @@
 $("document").ready(function() {
   var hashtag = window.location.hash.substr(1);
+  if ((hashtag != "home") && (hashtag !="")) {
+    $("#home").addClass("hidden");
+  }
+  
   console.log("Page = "+hashtag);
   $(".openmenu").click(function(e){
     e.preventDefault();
@@ -14,9 +18,5 @@ $("document").ready(function() {
     $(thisHref).removeClass("hidden");
     $(document).scrollTop(0);
   });
-  
-  if ((hashtag != "home") && (hashtag !="")) {
-    $("#home").addClass("hidden");
-  }
 });
 /* Pour BeCode par Axel Fiolle */
