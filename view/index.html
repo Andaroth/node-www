@@ -37,6 +37,7 @@
     </ol>
     <h3>Le but de ce micro-site</h3>
     <p>Je vais tenter de vous montrer comment installer la dernière version de NodeJS sur votre machine et comment vous en servir à travers plusieurs chapitres faciles à comprendre. <br>Vous trouverez la liste de ces chapitres dans le menu de ce site moche.</p>
+    <img src="./img/belongsinabrowser.gif" alt="NodeJS appartient au browser" class="largimg">
     <p>Vous pouvez passer au premier chapitre de ce cours en vous rendant sur <a class="btn chaplink" href="#installer">le chapitre d'installation</a></p>
   </section>
   <section id="installer" class="box hidden">
@@ -114,6 +115,7 @@
     </div>
     <p>Cette commande de terminal va mettre à jour, dans cet exemple, le paquet <i>create-react-app</i>. Si l'on ne met rien, le gestionnaire va mettre à jour tous les paquets.</p>
     <p>Utilisez <i>-g</i> pour choisir de mettre à jour tous vos paquets. Enlevez-le si vous voulez juste mettre à jour ceux du projet.</p>
+    <img src="./img/update.gif" alt="NodeJS appartient au browser" class="largimg">
     <p>Dans tous les cas, <b>NPM</b> va trouver en ligne, dans une vaste base de donnée, tous les modules déjà créés auparavant par la communauté de NodeJS. Notez donc que sans connexion à Internet, vous ne pourrez pas faire fonctionner <b>NPM</b> correctement. </p>
     <p>Le site <a href="npmjs.com">npmjs.com</a> est la source depuis laquelle <b>NPM</b>télécharge tous les modules. Vous trouverez bien plus de renseignements sur <a href="https://docs.npmjs.com/">la documentation en ligne de npmjs.com</a>.</p>
     <h3 id="chap2p4">Quels modules choisir pour son projet</h3>
@@ -222,12 +224,12 @@
     <div class="code">
       <pre><span class="ret">server</span>.<span class="ret">listen</span>(8080);</pre>
     </div>
-    <h3>Ensuite</h3>
+    <h3>Démarrer le serveur</h3>
     <p>Et voilà, Il ne nous reste plus qu'à démarrer notre serveur via le terminal grâce à ligne de commande ci-dessous et à admirer notre magnifique message "hello world" à l'adresse suivante: <a href="http://localhost:8080/">http://localhost:8080/</a></p>
     <div class="code">
       <pre><span class="npm">node</span> server.js</pre>
     </div>
-    <p>Le code complet donne ceci :</p>
+    <p>Le code complet étant ceci :</p>
     <div class="code">
       <pre><span class="var">var</span> http = <span class="fun">require</span>(<span class="sudo">"http"</span>);</pre>
       <pre><span class="var">var</span> server = <span class="ret">http</span>.<span class="fun">createServer</span>(<span class="fun">function</span>(request, response) {</pre>
@@ -249,6 +251,7 @@
       <pre><span class="ret">server</span>.<span class="ret">listen</span>(8080);</pre>
     </div>
     <h3>Ensuite</h3>
+    <img src="./img/servers.gif" alt="NodeJS appartient au browser" class="largimg">
     <p>Maintenant que votre serveur fonctionne et peut servir du HTML, il est temps d'apprendre comment échanger des informations avec ! Nous allons donc voir <a href="#events" class="btn">les événements</a></p>
   </section>
   <section id="events" class="box hidden">
@@ -292,13 +295,15 @@
     <p>C'est à la ligne 10 que notre foncton s'éxécute. Ce n'est que si le <i>emit('terminal')</i> de la ligne 10 s'exécute que le <i>on()</i> que nous avons écrit en ligne 8 ne se lance. </p>
     <p>L'intérêt de <i>emit()</i> est qu'il peut s'éxécuter quand vous le désirez: à l'appui d'une touche, sur un lien, sur un bouton, etc... </p>
     <h3>Ensuite</h3>
-    <p>C'est tout ce qu'il y a à retenir sur les événements. À partir de juste ça, vous devrez pouvoir chipoter un bon moment pour créer des applications très intéressantes. Je vous invite tout de même à faire un grand tour sur le <a href="https://nodejs.org/api/events.html">chapitre des événements de la documentation NodeJS</a> pour approfondir vos connaissances sur le sujet.</p>
+    <p>C'est tout ce qu'il y a à retenir sur les événements. À partir de juste ça, vous devrez pouvoir chipoter un bon moment pour créer des applications très intéressantes. Je vous invite tout de même à faire un grand tour sur le <a href="https://nodejs.org/api/events.html">chapitre des événements de la documentation NodeJS</a> pour approfondir vos connaissances sur le sujet. Ne vous précipitez pas. </p>
+    <img src="./img/hurry.gif" alt="NodeJS appartient au browser" class="largimg">
     <p>Une fois que vous êtes prêt, embarquez avec nous dans <a href="#socketio" class="btn">le chapitre sur les websocket</a></p>
   </section>
   <section id="socketio" class="box hidden">
     <h3>Les WebSocket</h3>
-    <p>Les websockets c'est chouette !! Pourquoi me direz-vous? Parce que vous pouvez communiquer en temps réel entre la page web et node.Plus besoin de rafrachir la page pour afficher les nouvelles informations.</p>
+    <p>Les websockets c'est chouette !! Pourquoi me direz-vous? Parce que vous pouvez communiquer en temps réel entre la page web et node. Plus besoin de rafrachir la page pour afficher les nouvelles informations.</p>
     <p>La même page peut envoyer des informations sans passer par un formulaire et recevoir des infromations en direct et tout ça en javascript !</p>
+    <img src="./img/nice.gif" alt="NodeJS appartient au browser" class="largimg">
     <p>Du côté serveur, pour gerer les websocket avec nodeJS vous aurez besoin d'installer le module <i>socket.io</i>  avec <b>NPM</b>.</p>
     <p>Du côté client, Pour communiquer avec les websockets , vous aurez besoin d'inclure la version client de socket.io sur vos pages web : </p>
     <div class="code">

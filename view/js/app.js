@@ -1,4 +1,6 @@
 $("document").ready(function() {
+  var hashtag = window.location.hash.substr(1);
+  console.log("Page = "+hashtag);
   $(".openmenu").click(function(e){
     e.preventDefault();
     $("#menu").toggleClass("mobilehidden");
@@ -12,4 +14,8 @@ $("document").ready(function() {
     $(thisHref).removeClass("hidden");
     $(document).scrollTop(0);
   });
+  
+  if ((hashtag != "home") && (hashtag !="")) {
+    $("#home").addClass("hidden");
+  }
 });
