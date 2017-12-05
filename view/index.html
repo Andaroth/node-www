@@ -101,20 +101,21 @@
     <h3>Initialiser un projet</h3>
     <p>Quand on initialise un projet avec <b>NPM</b>, celui ci créer un fichier package.json. Ce fichier contient non seulement le nom et la version du projet mais aussi, tout les modules utilisés par le projet.</p>
     <p>Cela vous servira à lister tout les modules dont vous avez besoin. Ce qui vous permettera de tous les réinstaller pas la suite en cas de besoin.</p>
+    <p>Pour commencer, faites <i>cd</i> pour vous rendre dans un dossier où vous voulez créer votre projet. </p>
     <p>Comme pour <b>NVM</b>, <b>NPM</b> s'utilise en lignes de commandes via le terminal. Pour initialiser un projet , faites donc la commande suivante :</p>
     <div class="code">
       <pre><span class="npm">npm</span> init </pre>
     </div>
-    <p><b>NPM</b> vous demandera le nom et la version du projet.Les modules que vous installerez y seront ajouté à la liste au moment ou vous les installerez.</p>
+    <p><b>NPM</b> vous demandera le nom et la version du projet.Les modules que vous installerez y seront ajouté à la liste au moment ou vous les installerez. Par défaut, vous pouvez faire suivant à l'aveugle car vous pourrez configurer le tout plus tard. </p>
     <h3>Installation globale ou locale</h3>
     <p><b>NPM</b> s'utilise de deux manières. Vous pouvez soit installer un module globalement dans NodeJS, ce qui vous permettra de l'utiliser dans tous vos projets, soit installer un module uniquement dans un projet en particulier, si jamais vous n'en avez pas besoin ailleurs. </p>
     <p>Nous allons passer les deux méthodes en revue, vite fait, pour que vous compreniez un peu mieux de quoi il s'agit. </p>
     <h4>Globale</h4>
     <div class="code">
-      <pre><span class="npm">npm</span> install <i>-g</i> <i>create-react-app</i> </pre>
+      <pre><span class="npm">npm</span> install <i>-g</i> <i>nodemon</i> </pre>
     </div>
-    <p>Dans l'exemple ci-dessus, nous avons <cite>-g</cite> qui va servir à indiquer au manager que l'on souhaite installer un package globalement. <br>Dans cet exemple, le paquet en question est <i>Create React App</i>, qui permet de générer un projet en <i>React</i> sans devoir trouver les dépendances vous-même, sans devoir écrire tous les fichiers de base qui font fonctionner ce genre d'applications. Vous gagnerez alors des heures de préparation.</p>
-    <p>Dans cette méthode, l'avantage est de pouvoir utiliser le module <cite>create-react-app</cite> où l'on veut. </p>
+    <p>Dans l'exemple ci-dessus, nous avons <cite>-g</cite> qui va servir à indiquer au manager que l'on souhaite installer un package globalement. <br>Dans cet exemple, le paquet en question est <i>nodemon</i>, il permet de relancer automatiquement un .js lorsqu'on le modifie. Ce paquet s'installer sans devoir trouver les dépendances vous-même, sans devoir écrire tous les fichiers de base qui font fonctionner ce genre d'applications. Vous gagnerez alors des heures de préparation.</p>
+    <p>Dans cette méthode, l'avantage est de pouvoir utiliser le module <cite>nodemon</cite> où l'on veut. </p>
     <p>À l'opposé, nous avons la méthode d'installation locale, sans <i>-g</i> :</p>
     <h4>Locale</h4>
     <div class="code">
@@ -124,9 +125,9 @@
     <p>Notez que cette méthode installera le module uniquement dans le projet de votre choix. <i>Il convient bien entendu que votre terminal soit dans le bon répertoire sinon ça ne sert à rien.</i></p>
     <h3>Mettre un paquet à jour</h3>
     <div class="code">
-      <pre><span class="npm">npm</span> update <b>-g</b> <i>create-react-app</i> </pre>
+      <pre><span class="npm">npm</span> update <b>-g</b> <i>nodemon</i> </pre>
     </div>
-    <p>Cette commande de terminal va mettre à jour, dans cet exemple, le paquet <i>create-react-app</i>. Si l'on ne met rien, le gestionnaire va mettre à jour tous les paquets.</p>
+    <p>Cette commande de terminal va mettre à jour, dans cet exemple, le paquet <i>nodemon</i>. Si l'on ne met rien, le gestionnaire va mettre à jour tous les paquets.</p>
     <p>Utilisez <i>-g</i> pour choisir de mettre à jour tous vos paquets. Enlevez-le si vous voulez juste mettre à jour ceux du projet.</p>
     <img src="./img/update.gif" alt="NodeJS appartient au browser" class="largimg">
     <p>Dans tous les cas, <b>NPM</b> va trouver en ligne, dans une vaste base de donnée, tous les modules déjà créés auparavant par la communauté de NodeJS. Notez donc que sans connexion à Internet, vous ne pourrez pas faire fonctionner <b>NPM</b> correctement. </p>
