@@ -111,11 +111,10 @@
     <p><b>NPM</b> s'utilise de deux manières. Vous pouvez soit installer un module globalement dans NodeJS, ce qui vous permettra de l'utiliser dans tous vos projets, soit installer un module uniquement dans un projet en particulier, si jamais vous n'en avez pas besoin ailleurs. </p>
     <p>Nous allons passer les deux méthodes en revue, vite fait, pour que vous compreniez un peu mieux de quoi il s'agit. </p>
     <h4>Globale</h4>
-    <p>Exécutez cette commande dans votre terminal :</p>
     <div class="code">
       <pre><span class="npm">npm</span> install <i>-g</i> <i>nodemon</i> </pre>
     </div>
-    <p>Nous avons <cite>-g</cite> qui va servir à indiquer au manager que l'on souhaite installer un package globalement. <br>Dans cet exemple, le paquet en question est <i>nodemon</i>, il permet de relancer automatiquement un .js lorsqu'on le modifie. Ce paquet s'installer sans devoir trouver les dépendances vous-même, sans devoir écrire tous les fichiers de base qui font fonctionner ce genre d'applications. Vous gagnerez alors des heures de préparation.</p>
+    <p>Dans l'exemple ci-dessus, nous avons <cite>-g</cite> qui va servir à indiquer au manager que l'on souhaite installer un package globalement. <br>Dans cet exemple, le paquet en question est <i>nodemon</i>, il permet de relancer automatiquement un .js lorsqu'on le modifie. Ce paquet s'installer sans devoir trouver les dépendances vous-même, sans devoir écrire tous les fichiers de base qui font fonctionner ce genre d'applications. Vous gagnerez alors des heures de préparation.</p>
     <p>Dans cette méthode, l'avantage est de pouvoir utiliser le module <cite>nodemon</cite> où l'on veut. </p>
     <p>À l'opposé, nous avons la méthode d'installation locale, sans <i>-g</i> :</p>
     <h4>Locale</h4>
@@ -241,9 +240,9 @@
       <pre><span class="ret">server</span>.<span class="ret">listen</span>(8080);</pre>
     </div>
     <h3>Démarrer le serveur</h3>
-    <p>Et voilà, Il ne nous reste plus qu'à démarrer notre serveur via le terminal grâce à ligne de commande ci-dessous et à admirer notre magnifique message "hello world" à l'adresse suivante: <a href="http://localhost:8080/">http://localhost:8080/</a> (vous devez avoir installé <i>nodemon</i> durant le chapitre de <b>NPM</b>)</p>
+    <p>Et voilà, Il ne nous reste plus qu'à démarrer notre serveur via le terminal grâce à ligne de commande ci-dessous et à admirer notre magnifique message "hello world" à l'adresse suivante: <a href="http://localhost:8080/">http://localhost:8080/</a></p>
     <div class="code">
-      <pre><span class="npm">nodemon</span> server.js</pre>
+      <pre><span class="npm">node</span> server.js</pre>
     </div>
     <p>Le code complet étant ceci :</p>
     <div class="code">
@@ -393,7 +392,7 @@
       <li>utiliser la page form afin de pouvoir récupérer les données envoyées par le formulaire dans un fichier json</li>
       <li>utiliser la page commentaire pour récupérer et afficher les commentaires qui sont écrit dans le fichier json</li>
     </ol>
-    <p><i>(int: utilisez le module "fs")</i></p>
+    <p><i>(int: utilisez le module "fs", la methode write et consultez la <a href="https://nodejs.org/api/fs.html">documentation</a>)</i></p>
   </section>
   <footer>
     <p>Cours créé par la Startup Lovelace à <a href="http://becode.org/">BeCode.org</a></p>
