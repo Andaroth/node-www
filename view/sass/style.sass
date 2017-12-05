@@ -176,6 +176,8 @@ footer
   a:hover
     color: $light
 // dynamic
+.noverflow
+  overflow: hidden
 .hidden, .mobileonly
   display: none
 // mobile
@@ -198,14 +200,15 @@ footer
     &:hover
       color: $light
   .menu
+    display: block
     height: auto
     background: $main
+    position: absolute
+    overflow-y: scroll
     li
       float: initial
       margin: 0
       border-bottom: 1px solid $url
-      &:last-child
-        border-bottom: 0
       a
         text-align: center
       a:hover, 
