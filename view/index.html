@@ -163,7 +163,7 @@
         <pre><span class="ret">module</span>.<span class="ret">exports</span>.English= <span class="fun">sayHelloInEnglish</span>; </pre>
       </div>
       <h3>Require</h3>
-      <p>Maintenant que le module est exporté, il faut l’importer dans use.js. pour ce faire, il suffit d’utiliser la méthode "  require " dans le fichier use.js qui va aller chercher votre module et le rendre utilisable.</p>
+      <p>Maintenant que le module est exporté, il faut l’importer dans "use.js". pour ce faire, il suffit d’utiliser la méthode "  require " dans le fichier use.js qui va aller chercher votre module et le rendre utilisable.</p>
       <p>Voici son mode d’emploi, premièrement la méthode doit être appelée dans une variable afin de pouvoir l’utiliser :</p>
       <div class="code">
         <pre><span class="var">var</span> <span class="fun">Something</span>= <span class="fun">require</span>(); </pre>
@@ -196,6 +196,11 @@
         <pre>console.log(<span class="fun">Something</span>.English()); <span class="com">// va nous logger HELLO</span> </pre>
         <pre>console.log(<span class="fun">Something</span>.Spanish()); <span class="com">// va nous logger Hola</span> </pre>
       </div>
+      <p>Pour tester votre programme, vous devrez lancer cette commande dans le terminal :</p>
+      <div class="code">
+        <pre><span class="npm">node</span> use.js</pre>
+      </div>
+      <p>Vous devriez voir "HELLO" et "Hola" apparaître dans la console. </p>
       <h3>Ensuite</h3>
       <p>Et voilà. <br>Pour plus d'info, n'hésitez pas à suivre <a href="https://www.youtube.com/watch?v=xHLd36QoS4k&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp&index=6">le cours de net ninja</a>, il est bien fait !</p>
       <img src="./img/iknowjs.gif" alt="NodeJS appartient au browser" class="largimg">
