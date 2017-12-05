@@ -12,9 +12,9 @@
   <nav>
     <a href="#menu" class="openmenu mobileonly">Menu</a>
     <ul id="menu" class="menu mobilehidden">
-      <li><a class="chaplink" href="#installer"><span class="mobileonly">Comment </span>Installer<span class="mobileonly"> NodeJS ?</span></a></li>
+      <li><a class="chaplink" href="#installer">Installation<span class="mobileonly"> de NodeJS</span></a></li>
       <li><a class="chaplink" href="#npm"><span class="mobileonly">Apprendre à utiliser </span>NPM</a></li>
-      <li><a href="#modules" class="chaplink"><span class="mobileonly">Que sont les </span>Modules<span class="mobileonly"> ?</span></a></li>
+      <li><a href="#modules" class="chaplink"><span class="mobileonly">Découvrir les </span>Modules</a></li>
       <li><a class="chaplink" href="#serveur"><span class="mobileonly">Faire un </span>Serveur<span class="mobileonly"> en Node</span></a></li>
       <li><a href="#events" class="chaplink"><span class="mobileonly">Jongler avec les </span>Événements</a></li>
       <li><a class="chaplink" href="#socketio"><span class="mobileonly">Faites votre chat avec </span>socket.io</a></li>
@@ -253,9 +253,9 @@
   </section>
   <section id="events" class="box hidden">
     <h3>Les Événements</h3>
-    <p>Votre serveur tourne désormais sur le port que vous avez choisi dans <i>listen</i>.</p>
-    <p>Il est temps de se pencher sur les événements. Vous vous rappelez de <i>addEventListener()</i> en JavaScript ? Cette sert à exécuter du script lorsqu'un événements déclencheur se produit.</p>
-    <p>En NodeJS, les événements fonctionnent un peu de la même manière, à la différence que les événements peuvent être créés, configurés et personnalisés vos besoin. </p>
+    <p>Votre serveur tourne désormais sur le port que vous avez choisi dans <i>listen()</i>.</p>
+    <p>Il est temps de se pencher sur les événements. Vous vous rappelez de <i>addEventListener()</i> en JavaScript ? Cette fonction sert à exécuter du script lorsqu'un événements déclencheur se produit.</p>
+    <p>En NodeJS, les événements fonctionnent un peu de la même manière, à la différence que les événements peuvent être créés, configurés et personnalisés selon vos besoin. </p>
     <p>Voici les événements existant par défaut dans NodeJS :</p>
     <div class="code">
       <pre><span class="var">var</span> fs = <span class="fun">require</span>(<span class="sudo">'fs'</span>);</pre>
@@ -265,11 +265,11 @@
       <pre>}); </pre>
     </div>
     <p>Regardons un peu de plus près ce bout de code...</p>
-    <p>En ligne 1 nous importons le module <i>fs</i>, et à la ligne 2, nous appelons la fonction <i>createReadStream()</i> de <i>fs</i> sur <i>rs</i>.</p>
-    <p>À la ligne 3, nous utilisons <i>rs</i> comme un objet pour y exécuter <i>on</i> avec en premier paramètre <i>open</i>. Ce <i>on</i> va nous permettre d'exécuter un script, une fonction. En l'occurence, le <i>console.log()</i> de la ligne 4 va s'éxécuter (sur <i>rs</i>) lorsque <i>'./fichier'</i> sera ouvert par l'utilisateur. </p>
+    <p>En ligne 1 nous importons le module <i>fs</i>, et à la ligne 2, nous appelons la fonction <i>createReadStream()</i> de <i>fs</i> sur une nouvelle variable nommée <i>rs</i>.</p>
+    <p>À la ligne 3, nous utilisons <i>rs</i> comme un objet pour y exécuter <i>on()</i> avec en premier paramètre <i>open</i>. Ce <i>on()</i> va nous permettre d'exécuter un script, une fonction. En l'occurence, le <i>console.log()</i> de la ligne 4 va s'éxécuter (sur <i>rs</i>) lorsque <i>'./fichier'</i> sera ouvert par l'utilisateur. </p>
     <h3>Créer ses propres événements</h3>
     <p>Nous venons de voir rapidement comment cela fonctionne. Maintenant, comme je vous l'ai dit, voyons comment nous pouvons créer nos propres événements pour pouvoir éxécuter toutes les tâches que l'on veut sur n'importe-quel événement. </p>
-    <p>Notez que pour cela, il vous faudra importer le module <i>events</i> pour que cela fonctionne. Si vous avez oubléi comment on fait, voici la commande terminale adéquate :</p>
+    <p>Notez que pour cela, il vous faudra importer le module <i>events</i> pour que cela fonctionne. Si vous avez oublié comment on fait, voici la commande terminale adéquate, à n'effectuer que dans la racine de votre projet car non globale.</p>
     <div class="code">
       <pre><span class="npm">npm</span> install <i>events</i></pre>
     </div>
@@ -286,9 +286,11 @@
       <pre><span class="com">// Lance l'évenement "aimeTerminal"</span></pre>
       <pre><span class="ret">eventEmitter</span>.<span class="fun">emit</span>(<span class="sudo">'terminal'</span>);</pre>
     </div>
-    <p>Comme vous le voyez, en ligne 1 nous avons importé le module <i>events</i> dans notre script. À la ligne suivante, nous avons créé un objet <i>eventEmitter</i> qui permettra de faire fonctionner nos événements.</p>
-    <p>À la ligne 8, nous lançons la fonction <i>myEvent()</i> lorsque l'objet <i>eventEmitter</i> reçoit le signal <i>'terminal'</i>. L'objet écoute, ou attend, de recevoir ce signal. <br>C'est à la ligne 10 que nous avons exécuté la fonction <i>emit</i> sur notre objet. <br>C'est alors à la ligne 10 que s'exécuter le <i>on</i> que nous avons écrit en ligne 8. </p>
-    <p>L'intérêt de <i>emit</i> est qu'il peut s'éxécuter quand vous le désirez: à l'appui d'une touche, sur un lien, sur un bouton, etc... </p>
+    <p>Comme vous le voyez, en ligne 1 nous avons importé le module <i>events</i> dans notre script à l'aide d'un <i>require()</i>. À la ligne suivante, nous avons créé un objet <i>eventEmitter</i> qui permettra de faire fonctionner nos événements.</p>
+    <p>En ligne 4 nous créons une fonction <i>myEvent()</i> que l'on voudra déclencher sur événement. </p>
+    <p>À la ligne 8, nous lançons notre fonction lorsque l'objet <i>eventEmitter</i> reçoit le signal <i>'terminal'</i>. L'objet écoute, ou attend, de recevoir ce signal. En deuxième paramètre de <i>on()</i>, nous indiquons la commande qui doit se déclencher, en l'occurence il s'agit de la fonction <i>myEvent()</i>. </p>
+    <p>C'est à la ligne 10 que notre foncton s'éxécute. Ce n'est que si le <i>emit('terminal')</i> de la ligne 10 s'exécute que le <i>on()</i> que nous avons écrit en ligne 8 ne se lance. </p>
+    <p>L'intérêt de <i>emit()</i> est qu'il peut s'éxécuter quand vous le désirez: à l'appui d'une touche, sur un lien, sur un bouton, etc... </p>
     <h3>Ensuite</h3>
     <p>C'est tout ce qu'il y a à retenir sur les événements. À partir de juste ça, vous devrez pouvoir chipoter un bon moment pour créer des applications très intéressantes. Je vous invite tout de même à faire un grand tour sur le <a href="https://nodejs.org/api/events.html">chapitre des événements de la documentation NodeJS</a> pour approfondir vos connaissances sur le sujet.</p>
     <p>Une fois que vous êtes prêt, embarquez avec nous dans <a href="#socketio" class="btn">le chapitre sur les websocket</a></p>
