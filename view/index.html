@@ -227,7 +227,7 @@
     <p>Ensuite "response.write()" va tout simplement, permettre de concevoir notre document html passé en arguement. <br>Et enfin "response.end()" viendra signifier la fin de notre réponse.</p>
     <div class="code">
       <pre><span class="ret">response</span>.<span class="fun">writeHead</span>(200, {<span class="sudo">"Content-Type"</span>: <span class="sudo">"text/html"</span>});</pre>
-      <pre><span class="ret">response</span>.<span class="fun">write</span>(<span class="sudo">"</span></pre>
+      <pre><span class="ret">response</span>.<span class="fun">write</span>(<span class="sudo">`</span></pre>
       <pre><span class="com">&#x3C;!DOCTYPE html&#x3E;</span></pre>
       <pre><span class="sudo">&#x3C;html lang=&#x22;en&#x22;&#x3E;</span></pre>
       <pre>&ensp;<span class="tag">&#x3C;head&#x3E;</span></pre>
@@ -238,7 +238,7 @@
       <pre>&ensp;&ensp;<span class="tag">&#x3C;p&#x3E;</span>Hello world<span class="tag">&#x3C;/p&#x3E;</span></pre>
       <pre>&ensp;<span class="tag">&#x3C;/body&#x3E;</span></pre>
       <pre><span class="sudo">&#x3C;/html&#x3E;</span></pre> 
-      <pre><span class="sudo">"</span>);</pre>
+      <pre><span class="sudo">`</span>);</pre>
       <pre><span class="ret">response</span>.<span class="ret">end</span>();</pre>
     </div>
     <h3>La méthode listen</h3>
@@ -256,7 +256,7 @@
       <pre><span class="var">var</span> http = <span class="fun">require</span>(<span class="sudo">"http"</span>);</pre>
       <pre><span class="var">var</span> server = <span class="ret">http</span>.<span class="fun">createServer</span>(<span class="fun">function</span>(request, response) {</pre>
       <pre>&ensp;<span class="ret">response</span>.<span class="fun">writeHead</span>(200, {<span class="sudo">"Content-Type"</span>: <span class="sudo">"text/html"</span>});</pre>
-      <pre>&ensp;<span class="ret">response</span>.<span class="fun">write</span>(<span class="sudo">"</span></pre>
+      <pre>&ensp;<span class="ret">response</span>.<span class="fun">write</span>(<span class="sudo">`</span></pre>
       <pre>&ensp;<span class="com">&#x3C;!DOCTYPE html&#x3E;</span></pre>
       <pre>&ensp;<span class="sudo">&#x3C;html lang=&#x22;en&#x22;&#x3E;</span></pre>
       <pre>&ensp;&ensp;<span class="tag">&#x3C;head&#x3E;</span></pre>
@@ -267,7 +267,7 @@
       <pre>&ensp;&ensp;&ensp;<span class="tag">&#x3C;p&#x3E;</span>Hello world<span class="tag">&#x3C;/p&#x3E;</span></pre>
       <pre>&ensp;&ensp;<span class="tag">&#x3C;/body&#x3E;</span></pre>
       <pre>&ensp;<span class="sudo">&#x3C;/html&#x3E;</span></pre> 
-      <pre>&ensp;<span class="sudo">"</span>);</pre>
+      <pre>&ensp;<span class="sudo">`</span>);</pre>
       <pre>&ensp;<span class="ret">response</span>.<span class="ret">end</span>();</pre>
       <pre>});</pre>
       <pre><span class="ret">server</span>.<span class="ret">listen</span>(8080);</pre>
