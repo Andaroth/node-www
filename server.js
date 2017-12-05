@@ -3,6 +3,7 @@ var serverinit = function() {
     var ejs = require('ejs'); // EJS pour user des variables dans les .html
     var express = require("express"); // On appelle le module "express"
     var app = express(); // L'app va utiliser express
+    app.set("view engine", "express");
     var fs = require("fs"); // Pour charger un fichier chez le client
     // Some paths
     var viewPath = __dirname + "/view/";
@@ -10,13 +11,13 @@ var serverinit = function() {
     var appHomePath = ["/","/index.html","/index.htm","/index.php","/index","/home"]; // Liste des adresse pour laquelle on va renvoyer la page d'accueil
     var notFound = function(res) { // Je fais une fonction pour appeler la 404 sans me prendre la tête 
         console.log(">>> SEND '404' TO client");
-        res.send(viewPath + "404.html");
+        res.send(viewPath + "404.ejs");
     }
     /* .GET pour ouvrir les fichiers demandés par le client */
     app.get(appHomePath, function(req, res) { // homepage
-        var targetFile = viewPath + "index.html";
+        var targetFile = viewPath + "index.ejs";
         console.log(">>> SEND '" + targetFile + "' TO client");
-        res.sendFile(targetFile); // Envoyer le fichier demandé au client
+        res.render(targetFile); // Envoyer le fichier demandé au client
     }) // homepage
     .get("/:pageRequest", function(req, res) { // Premier niveau
         var targetFile = viewPath + req.params.pageRequest;
