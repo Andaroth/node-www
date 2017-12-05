@@ -93,7 +93,7 @@
     <h2>Utiliser <b>NPM</b></h2>
     <p>Ce chapitre va vous expliquer brièvement à quoi sert <b>NPM</b> et ce que sont les modules/packages que l'on peut installer dans un projet à l'aide de cet outil. </p>
     <p><b>NPM</b> (on l'a beaucoup lu en à peine 15 secondes, c'est chaud) signifie <strong>Node Package Manager</strong>. </p>
-    <img src="./img/package.gif" alt="NodeJS appartient au browser" class="largimg">
+    <img src="./img/package.gif" alt="Gestionnaire de packages" class="largimg">
     <p>Ce petit outil, néanmoins très complet, va nous permettre d'installer des modules (contenu dans les package) dans NodeJS ou plus spécifiquement dans nos projets.</p>
     <h3 id="chap2p2">Pourquoi s'en servir</h3>
     <p>Les modules vont vous permettre de créer des applications rapidement, sans devoir réinventer systématiquement la roue. Ils sont incontournables dans 99,99% des projets en NodeJS de nos jours. </p>
@@ -131,7 +131,7 @@
     </div>
     <p>Cette commande de terminal va mettre à jour, dans cet exemple, le paquet <i>nodemon</i>. Si l'on ne met rien, le gestionnaire va mettre à jour tous les paquets.</p>
     <p>Utilisez <i>-g</i> pour choisir de mettre à jour tous vos paquets. Enlevez-le si vous voulez juste mettre à jour ceux du projet.</p>
-    <img src="./img/update.gif" alt="NodeJS appartient au browser" class="largimg">
+    <img src="./img/update.gif" alt="Mettre à jour Node" class="largimg">
     <p>Dans tous les cas, <b>NPM</b> va trouver en ligne, dans une vaste base de donnée, tous les modules déjà créés auparavant par la communauté de NodeJS. Notez donc que sans connexion à Internet, vous ne pourrez pas faire fonctionner <b>NPM</b> correctement. </p>
     <p>Le site <a href="npmjs.com">npmjs.com</a> est la source depuis laquelle <b>NPM</b> télécharge tous les modules. Vous trouverez bien plus de renseignements sur <a href="https://docs.npmjs.com/">la documentation en ligne de npmjs.com</a>.</p>
     <h3 id="chap2p4">Quels modules choisir pour son projet</h3>
@@ -203,7 +203,7 @@
       <p>Vous devriez voir "HELLO" et "Hola" apparaître dans la console. </p>
       <h3>Ensuite</h3>
       <p>Et voilà. <br>Pour plus d'info, n'hésitez pas à suivre <a href="https://www.youtube.com/watch?v=xHLd36QoS4k&list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp&index=6">le cours de net ninja</a>, il est bien fait !</p>
-      <img src="./img/iknowjs.gif" alt="NodeJS appartient au browser" class="largimg">
+      <img src="./img/iknowjs.gif" alt="Les bases de JS" class="largimg">
       <p>Maintenant que nous savons comment utiliser les outils de base, il convient d'apprendre à mettre une page en ligne avec NodeJS, rendez-vous sur le chapitre sur <a href="#serveur" class="btn">la création de serveur</a></p>
   </section>
   <section id="serveur" class="box hidden">
@@ -249,7 +249,7 @@
     <h3>Démarrer le serveur</h3>
     <p>Et voilà, Il ne nous reste plus qu'à démarrer notre serveur via le terminal grâce à ligne de commande ci-dessous et à admirer notre magnifique message "hello world" à l'adresse suivante: <a href="http://localhost:8080/">http://localhost:8080/</a></p>
     <div class="code">
-      <pre><span class="npm">node</span> server.js</pre>
+      <pre><span class="npm">nodemon</span> server.js</pre>
     </div>
     <p>Le code complet étant ceci :</p>
     <div class="code">
@@ -273,7 +273,7 @@
       <pre><span class="ret">server</span>.<span class="ret">listen</span>(8080);</pre>
     </div>
     <h3>Ensuite</h3>
-    <img src="./img/servers.gif" alt="NodeJS appartient au browser" class="largimg">
+    <img src="./img/servers.gif" alt="Faire tourner un serveur en Node" class="largimg">
     <p>Maintenant que votre serveur fonctionne et peut servir du HTML, il est temps d'apprendre comment échanger des informations avec ! Nous allons donc voir <a href="#events" class="btn">les événements</a></p>
   </section>
   <section id="events" class="box hidden">
@@ -318,14 +318,14 @@
     <p>L'intérêt de <i>emit()</i> est qu'il peut s'éxécuter quand vous le désirez: à l'appui d'une touche, sur un lien, sur un bouton, etc... </p>
     <h3>Ensuite</h3>
     <p>C'est tout ce qu'il y a à retenir sur les événements. À partir de juste ça, vous devrez chipoter un bon moment pour créer des applications de plus en plus complexe. Je vous invite même à faire un grand tour sur <a href="https://nodejs.org/api/events.html">la documentation NodeJS</a> pour approfondir vos connaissances sur le sujet. Ne vous précipitez pas. </p>
-    <img src="./img/hurry.gif" alt="NodeJS appartient au browser" class="largimg">
+    <img src="./img/hurry.gif" alt="Rien ne sert de courir" class="largimg">
     <p>Une fois que vous êtes prêt, embarquez avec nous dans <a href="#socketio" class="btn">le chapitre sur les websocket</a></p>
   </section>
   <section id="socketio" class="box hidden">
     <h3>Les WebSocket</h3>
     <p>Les websockets c'est chouette !! Pourquoi me direz-vous? Parce que vous pouvez communiquer en temps réel entre la page web et node. Plus besoin de rafrachir la page pour afficher les nouvelles informations.</p>
     <p>La même page peut envoyer des informations sans passer par un formulaire et recevoir des infromations en direct et tout ça en javascript !</p>
-    <img src="./img/nice.gif" alt="NodeJS appartient au browser" class="largimg">
+    <img src="./img/nice.gif" alt="NodeJS c'est cool" class="largimg">
     <p>Du côté serveur, pour gerer les websocket avec nodeJS vous aurez besoin d'installer le module <i>socket.io</i>  avec <b>NPM</b>.</p>
     <p>Du côté client, Pour communiquer avec les websockets , vous aurez besoin d'inclure la version client de socket.io sur vos pages web : </p>
     <div class="code">
@@ -382,7 +382,7 @@
   <section id="express" class="box hidden">
     <h2>Exercices avec express</h2>
     <p>Vu que j'ai beaucoup travaillé à intégrer le cours que nous avons rédigé à plusieurs, je vais me reposer et vous laisser réunir ce que l'on a vu précédemment dans deux exercices en express !</p>
-    <img src="./img/exercices.gif" alt="NodeJS appartient au browser" class="largimg">
+    <img src="./img/exercices.gif" alt="Faites des exercices en NodeJS" class="largimg">
     <p>L'exercice c'est très important !</p>
     <h3>Exercice 1</h3>
     <p>Créer un petit projet avec une structure mvc en vous aidant d'express. <br>Le site doit comprendre :</p>
