@@ -11,7 +11,7 @@ var serverinit = function() {
     var appHomePath = ["/","/index.html","/index.htm","/index.php","/index","/home"]; // Liste des adresse pour laquelle on va renvoyer la page d'accueil
     var notFound = function(res) { // Je fais une fonction pour appeler la 404 sans me prendre la tête 
         console.log(">>> SEND '404' TO client");
-        res.send(viewPath + "404.ejs");
+        res.render(res.send(viewPath + "404.ejs"));
     }
     /* .GET pour ouvrir les fichiers demandés par le client */
     app.get(appHomePath, function(req, res) { // homepage
