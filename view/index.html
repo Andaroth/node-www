@@ -18,6 +18,7 @@
       <li><a class="chaplink" href="#serveur"><span class="mobileonly">Faire un </span>Serveur<span class="mobileonly"> en Node</span></a></li>
       <li><a href="#events" class="chaplink"><span class="mobileonly">Jongler avec les </span>Événements</a></li>
       <li><a class="chaplink" href="#socketio"><span class="mobileonly">Faites votre chat avec </span>socket.io</a></li>
+      <li><a href="#express" class="chaplink"><span class="mobileonly">Exercices avec </span>Express</a></li>
     </ul>
   </nav>
   <section id="home" class="box">
@@ -34,6 +35,7 @@
       <li><a class="chaplink" href="#serveur">Faire un Serveur en Node</a></li>
       <li><a href="#events" class="chaplink">Jongler avec les Événements</a></li>
       <li><a class="chaplink" href="#socketio">Faites votre chat avec socket.io</a></li>
+      <li><a href="#express" class="chaplink">Exercices avec Express</a></li>
     </ol>
     <h3>Le but de ce micro-site</h3>
     <p>Je vais tenter de vous montrer comment installer la dernière version de NodeJS sur votre machine et comment vous en servir à travers plusieurs chapitres faciles à comprendre. </p>
@@ -367,7 +369,29 @@
       <pre>});</pre>
     </div>
     <h3>Ensuite</h3>
-    <p>Ce que vous venez d'apprendre durant ce chapitre fonctionne avec ce que l'on appelle des événements. </p>
+    <p>Ce que vous venez d'apprendre durant ce chapitre fonctionne avec les événements. Lorsque vous aurez terminé votre chat en Node, découvrez nos <a class="btn" href="#express">exercices avec Express</a></p>
+  </section>
+  <section id="express" class="box hidden">
+    <h2>Exercices avec express</h2>
+    <p>Vu que j'ai beaucoup travaillé à intégrer le cours que nous avons rédigé à plusieurs, je vais me reposer et vous laisser réunir ce que l'on a vu précédemment dans deux exercices en express !</p>
+    <img src="./img/exercices.gif" alt="NodeJS appartient au browser" class="largimg">
+    <p>L'exercice c'est très important !</p>
+    <h3>Exercice 1</h3>
+    <p>Créer un petit projet avec une structure mvc en vous aidant d'express. <br>Le site doit comprendre :</p>
+    <ol>
+      <li>une page html avec un formulaire pour écrire le commentaire</li>
+      <li>une page html avec un formulaire pour écrire le commentaire</li>
+      <li>une page 404</li>
+    </ol>
+    <p>Organisez votre projet pour qu'en manipulant l'url, on ne puisse arriver que sur les pages citées ci-dessus. <br><i>(int: utilisez la methode "get" fournie par express)</i></p>
+    <h3>Exercice 2</h3>
+    <p>Reprendre la structure du projet précédent afin de créer un site permettant la pubication de commentaires.</p>
+    <ol>
+      <li>utilisez la methode POST fournie par express</li>
+      <li>utiliser la page form afin de pouvoir récupérer les données envoyées par le formulaire dans un fichier json</li>
+      <li>utiliser la page commentaire pour récupérer et afficher les commentaires qui sont écrit dans le fichier json</li>
+    </ol>
+    <p><i>(int: utilisez le module "fs")</i></p>
   </section>
   <footer>
     <p>Cours créé par la Startup Lovelace à <a href="http://becode.org/">BeCode.org</a></p>
