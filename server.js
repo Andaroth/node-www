@@ -10,7 +10,7 @@ var serverinit = function() {
   
   var key = fs.readFileSync('/etc/pki/tls/private/localhost.key');
   var cert = fs.readFileSync('/etc/pki/tls/certs/localhost.crt');
-  var ca = fs.readFileSync('/etc/pki/tls/certs/ca-bundle.crt');
+  var ca = fs.readFileSync('/etc/pki/tls/certs/ca-bundle.trust.crt');
   var option = {
     key: key,
     cert: cert,
