@@ -10,7 +10,7 @@ var serverinit = function() {
   // Some paths
   
   // ssl conf
-  var keystr = '/etc/letsencrypt/csr/0000_key-certbot.pem';
+  var keystr = '/etc/letsencrypt/keys/0000_key-certbot.pem';
   var certstr = '/etc/letsencrypt/csr/0000_csr-certbot.pem';
   if (
     (fs.existsSync(keystr)) &&
