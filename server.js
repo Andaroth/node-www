@@ -20,8 +20,7 @@ var serverinit = function() {
     var cert = fs.readFileSync(certstr, 'utf8');
     var option = {
       key: key,
-      cert: cert,
-      ca: ca
+      cert: cert
     };
   }
   var https = require('https');
@@ -74,8 +73,8 @@ var serverinit = function() {
     (fs.existsSync(keystr)) &&
     (fs.existsSync(certstr)) 
   ) {
-    https.createServer(options, app).listen(443);
-    console.log("[443] >>> Server started with HTTPS");
+    https.createServer(options, app).listen(8080);
+    console.log("[8080(fake 443)] >>> Server started with HTTPS");
   } else {
     app.listen(8080);
     console.log("[8080] >>> Server started with HTTP");
