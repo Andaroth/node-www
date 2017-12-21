@@ -9,17 +9,20 @@ var serverinit = function() {
   // Some paths
   
   // ssl conf
-  var keystr = '/etc/letsencrypt/keys/0000_key-certbot.pem';
-  var certstr = '/etc/letsencrypt/csr/0000_csr-certbot.pem';
+  var keystr = '/etc/letsencrypt/live/axelfiolle.be/privkey.pem';
+  var certstr = '/etc/letsencrypt/live/axelfiolle.be/cert.pem';
+  var ca_str = '/etc/letsencrypt/live/axelfiolle.be/chain.pem';
   if (
     (fs.existsSync(keystr)) &&
     (fs.existsSync(certstr)) 
   ) {
     var key = fs.readFileSync(keystr, 'utf8');
     var cert = fs.readFileSync(certstr, 'utf8');
+    var ca = fs.readFileSync(ca_str, 'utf8');
     var options = {
       key: key,
-      cert: cert
+      cert: cert,
+      ca: ca
     };
   }
   // normal path
