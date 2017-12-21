@@ -18,7 +18,7 @@ var serverinit = function() {
   ) {
     var key = fs.readFileSync(keystr, 'utf8');
     var cert = fs.readFileSync(certstr, 'utf8');
-    var option = {
+    var options = {
       key: key,
       cert: cert
     };
