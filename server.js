@@ -6,18 +6,26 @@ var serverinit = function() {
   var app = express(); // L'app va utiliser express
   app.set("view engine", "express");
   var fs = require("fs"); // Pour charger un fichier chez le client
+  var https = require('https');
   // Some paths
   
-  var key = fs.readFileSync('/etc/pki/tls/private/localhost.key');
-  var cert = fs.readFileSync('/etc/pki/tls/certs/localhost.crt');
-  var ca = fs.readFileSync('/etc/pki/tls/certs/ca-bundle.trust.crt');
-  var option = {
-    key: key,
-    cert: cert,
-    ca: ca
-  };
+  // ssl conf
+  var keystr = '/etc/pki/tls/private/localhost.key';
+  var certstr = '/etc/pki/tls/certs/localhost.crt';
+  if (
+    (fs.existsSync(keystr)) &&
+    (fs.existsSync(certstr)) 
+  ) {
+    var key = fs.readFileSync(keystr, 'utf8');
+    var cert = fs.readFileSync(certstr, 'utf8');
+    var option = {
+      key: key,
+      cert: cert,
+      ca: ca
+    };
+  }
   var https = require('https');
-  
+  // normal path
   var viewPath = __dirname + "/views/";
   var cssPath = viewPath + "css/";
   var appHomePath = ["/","/index.html","/index.htm","/index.php","/index","/home"]; // Liste des adresse pour laquelle on va renvoyer la page d'accueil
@@ -63,9 +71,8 @@ var serverinit = function() {
 
   
   if (
-    (fs.existsSync(key)) &&
-    (fs.existsSync(cert)) &&
-    (fs.existsSync(ca))
+    (fs.existsSync(keystr)) &&
+    (fs.existsSync(certstr)) 
   ) {
     https.createServer(options, app).listen(443);
     console.log("[443] >>> Server started with HTTPS");
