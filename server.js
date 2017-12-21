@@ -4,7 +4,6 @@ var serverinit = function() {
   var express = require("express"); // On appelle le module "express"
   var expressl = require('express-force-ssl');
   var app = express(); // L'app va utiliser express
-  app.set("view engine", "express");
   var fs = require("fs"); // Pour charger un fichier chez le client
   var https = require('https');
   // Some paths
@@ -23,7 +22,6 @@ var serverinit = function() {
       cert: cert
     };
   }
-  var https = require('https');
   // normal path
   var viewPath = __dirname + "/views/";
   var cssPath = viewPath + "css/";
@@ -33,7 +31,7 @@ var serverinit = function() {
       res.sendFile(viewPath + "404.html");
   }
   /* .GET pour ouvrir les fichiers demandés par le client */
-  app.use(express)
+  app.set("view engine", "express").use(express)
   .get(appHomePath, function(req, res) { // homepage
       var targetFile = viewPath + "index.ejs";
       console.log(">>> SEND '" + targetFile + "' TO client");
