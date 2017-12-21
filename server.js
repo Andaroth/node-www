@@ -10,8 +10,8 @@ var serverinit = function() {
   // Some paths
   
   // ssl conf
-  var keystr = '/etc/pki/tls/private/localhost.key';
-  var certstr = '/etc/pki/tls/certs/localhost.crt';
+  var keystr = '/var/lib/letsencrypt/k6ZUqLU8r_e2cy_VAVK5xxJbtv2Ng7fU1iNZipfFjPo.pem';
+  var certstr = '/var/lib/letsencrypt/k6ZUqLU8r_e2cy_VAVK5xxJbtv2Ng7fU1iNZipfFjPo.crt';
   if (
     (fs.existsSync(keystr)) &&
     (fs.existsSync(certstr)) 
@@ -74,10 +74,10 @@ var serverinit = function() {
     (fs.existsSync(certstr)) 
   ) {
     https.createServer(options, app).listen(8080);
-    console.log("[8080(fake 443)] >>> Server started with HTTPS");
+    console.log("[8080(fake 443)] >>> Server started with HTTPS >>>");
   } else {
     app.listen(8080);
-    console.log("[8080] >>> Server started with HTTP");
+    console.log("[8080] >>> Server started with HTTP >>>");
   }
 }; // var init
 
